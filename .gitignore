@@ -1,0 +1,13 @@
+/*.aux
+/*.idx
+/*.log
+/*.bbl
+/*.blg
+/tesis.pdf
+*.out
+*.synctex.gz
+*.ilg
+/tesis.ind
+/tesis.toc
+auto/
+/Figuras.pdf

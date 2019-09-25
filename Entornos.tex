@@ -1,0 +1,55 @@
+%%	 -----------------------------------------------------------------------------------------------
+%%	LIBRERIAS EMPLEADAS EN EL DOCUMENTO
+%%	 -----------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usepackage{makeidx}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{tocbibind}
+\usepackage{hyperref}
+% ver http://gilmation.com/articles/latex-margins-for-book-binding/
+% y http://tex.stackexchange.com/questions/50258/margins-of-book-class
+\usepackage[margin=3.5cm]{geometry}
+\geometry{bindingoffset=1cm}
+
+
+
+%%	 -----------------------------------------------------------------------------------------------
+%%	ENTORNOS DEFINICIÓN - TEOREMA - PROPOSICIÓN - COROLARIO - LEMA - OBSERVACIÓN - DEMOSTRACIÓN
+%%	 -----------------------------------------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{Defi}{Definición}[section]
+\newtheorem{Teo}{Teorema}[section]
+\newtheorem{Ejem}{Ejemplo}[section]
+\newtheorem{Prop}{Proposición}[section]
+\newtheorem{Col}{Corolario}[section]
+\newenvironment{Dem}
+    {
+    Demostración.
+    }
+    {
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    }
+%%	 -----------------------------------------------------------------------------------------------
+%%	COMANDOS
+%%	 -----------------------------------------------------------------------------------------------
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+
