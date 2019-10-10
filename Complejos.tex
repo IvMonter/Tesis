@@ -1,9 +1,9 @@
-\chapter{Complejos Simpliciales}
+\chapter{Complejos simpliciales}
 En este capítulo introduciremos la noción de complejo simplicial y complejo simplicial abstracto, así como la relación entre ellos.
-\section{Complejos Simpliciales en $\mathbb{R}^N$}
+\section{Complejos simpliciales en $\mathbb{R}^N$}
 \subsection{Simplejos}  
 El primer paso para definir un complejo simplicial, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
-\begin{Defi}[Independencia Geométrica]
+\begin{Defi}[Independencia geométrica]
 Dado un conjunto finito $\{a_0,..,a_n\}$ de puntos en $\mathbb{R}^{N}$, el conjunto es geométricamente independiente si la única solución al sistema 
 \begin{equation}\label{s1}
     \begin{split}
@@ -16,8 +16,7 @@ es $t_i = 0$ para toda $i$.
 \end{Defi}
 
 \begin{Teo}
-\hspace{1cm}
-\begin{enumerate}[(a)]
+~\begin{enumerate}[(a)]
     \item El conjunto $\{a_0,...,a_n\}$ es geométricamente independiente si y sólo si $\{a_1-a_0,..,a_n-a_0\}$ es linealmente independiente.
     \item Si $\{a_0,...,a_n\}$ es geométricamente independiente entonces para todo subconjunto no vacío $A$ de $\{a_0,..,a_n\}$, $A$ es geométricamente independiente.
 \end{enumerate}
@@ -52,7 +51,7 @@ Ejemplos:
 \item Todo conjunto linealmente independiente unión con el vector cero. 
 \end{enumerate}
 
-\begin{Defi}[simplejo]
+\begin{Defi}[Simplejo]
 Sea $\{a_0,..,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $\sigma$ generado por $a_0,...,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
 \begin{equation}\label{s2}
 \begin{split}
@@ -122,24 +121,59 @@ Para un simplex $\sigma$ generado por $a_0,...,a_n$ puntos en $\mathbf{R}^{N}$ s
 \end{enumerate}
 \end{Prop}
 
-\section{Complejos en $\mathbb{R}^N$}
-\begin{Defi}[Complejo Simplicial]
-Un complejo simplicial $K$ en $\mathbb{R}^N$  es una colección de simplejos en $\mathbb{R}^N$ tal que:
+\subsection{Complejos en $\mathbb{R}^N$}
+\begin{Defi}[Complejo simplicial]
+Un complejo simplicial $\textit{K}$ en $\mathbb{R}^N$  es una colección de simplejos en $\mathbb{R}^N$ tal que:
 \begin{enumerate}
-\item Toda cara de un simplejo de K está en K.
-\item La intersección de cualesquiera dos simplejos en K es una cara de cada una de ellas.
-\end{enumerate}
+\item Toda cara de un simplejo de $\textit{K}$ está en $\textit{K}$.
+\item La intersección de cualesquiera dos simplejos en $\textit{K}$ es una cara de cada uno de ellos.
+\end{enumerate} 
+\end{Defi}
+\begin{Defi}
+Sean $\textit{K}$ y $\textit{L}$ complejos simpliciales, tales que $\textit{L}$ está contenido en $\textit{K}$, decimos entonces que $\textit{L}$ es un subcomplejo de $\textit{K}$. 
 \end{Defi}
 
+\begin{Prop}
+Si $\textit{L}$ es una subcolleción de un complejo simplcial $\textit{K}$, tal que contiene todas las caras de sus elementos, entonces $\textit{L}$ es un subcomplejo de $\textit{K}$.
+\end{Prop}
+
 \begin{Defi}
+El subcomplejo $\textit{L}$ de $\textit{K}$ que contiene a todos los simplejos de $\textit{K}$ de dimensión a lo más p es llamado el p-esqueleto de $\textit{K}$ y se denota por $\textit{K}^{(p)}$. 
+El subcomplejo $\textit{K}^{(0)}$ es denominado el conjunto de vértices de $\textit{K}$.
+\end{Defi}
+
+\begin{Teo}
+Sea $\abs{\textit{K}}$ la unión de los simplejos de $\textit{K}$, si asociamos a cada simplejo de $\textit{K}$ la topología natural como subespacio de $\mathbb{R}^N$, entonces podemos definir una topología para $\abs{\textit{K}}$ declarando  un conjunto $C$ de  $\abs{\textit{K}}$ cerrado si y sólo si para todo simplejo $\sigma$ en  $\textit{K}$, $\sigma\cap C$ es cerrado en $\sigma$.
+\end{Teo}
+
+\begin{Defi}[Esquema de vértices]
 Sea $K$ un complejo simplicial, sea $V$ el conjunto de vértices de $K$ y $\mathcal{R}$ la colección de todos los subconjuntos de $V$ tales que generan un simplejo de K. La colección $\mathcal{R}$ es llamadada el esquema de vértices de $K$.
 \end{Defi}
-\section{Complejos Simpliciales Abstractos}
+\section{Complejos simpliciales abstractos}
 A continuación introduciremos la noción de complejo simplicial abstracto y su relación con un complejo simplicial.
 \begin{Defi}[Complejo simplicial abstracto]
-Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está.   
+Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está. Un elemento $\textit{A}$ $\mathcal{S}$ es llamado un simplejo se $\mathcal{S}$. 
 \end{Defi}
+Analogamente a un complejo simplicial, podemos definir la dimensión, el conjunto de vértices y simplejos de un complejo simplicial abstracto.
 \begin{Ejem}
 El esquema de vértices de un complejo simplicial es un complejo simplicial abstracto.
 \end{Ejem}
+\begin{Defi}
+Dos complejos simpliciales abstractos S y T son isomorfos si existe una función f de V(K) en V(T) tal que biyectiva tal que 
+\end{Defi}
+El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales abstractos es el siguiente:
+\begin{Teo} 
+~\begin{enumerate}
+\item Todo complejo simplicial abstracto $S$ es isomorfo al esquema de vértices de algún complejo simplicial K.
+\item Dos complejos simpliciales son linealmente isomorfos si y sólo si sus esquemas de vértices son isomorfos como complejos simpliciales abstractos.
+\end{enumerate}
+\end{Teo}
+
+\begin{Defi}
+Sea $S$ un complejo simplicial abstracto y K un complejo simplicial tal que el esquema de vértices de K es isomorfo a S, decimos que K es una realización geométrica de $S$.
+\end{Defi}
+Notemos que para un complejo simplicial abstracto $S$ pueden existir una infinidad de realizaciones geométricas, sin embargo si K y $K^{'}$ son realizaciones geométricas de K 
+
+
+
 
