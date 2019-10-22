@@ -90,10 +90,8 @@ siguiente definición.
 \begin{Defi}[Coordenadas baricéntricas]
 Sea $\sigma$ un simplejo generado por $a_0,...,a_n$, si $x$ es un punto en $\sigma$, $x$ es de la forma $x = \sum_{i=0}^{n}t_ia_i$ con $t_i\geqslant 0$, las coordenadas baricéntricas $\{t_i(x):i = 0,..n\}$ del punto $x$ en $\sigma$ con respecto a $a_0,...,a_n$ se definen como funciones de $\sigma$ en $\mathbb{R}^{N}$ tales que $t_i(x) = t_i$
 \end{Defi}
-
-Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),...,t_n(x),0,...,0)$.
 \begin{Prop}
-T es continua.
+Las coordenadas baricéntricas son continuas.
 \end{Prop}
 \begin{Dem}
 
@@ -102,8 +100,21 @@ $t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue 
 \begin{equation}
 x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$, los cuales son linealmente independientes y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,...,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbf{R}^N$,  y definimos la función lineal $T\colon \mathbf{R^N}\rightarrow \mathbf{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, de modo que $T(x) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
+%Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),...,t_n(x),0,...,0)$.
+%\begin{Prop}
+%T es continua.
+%\end{Prop}
+%\begin{Dem}
+%
+%Sea $x$ un punto en $\sigma$, entonces $x=\sum_{i=0}^{n}t_i(x)a_i$ con $\sum_{i=0}^{n}t_i(x)=1$ y 
+%$t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue que 
+%\begin{equation}
+%x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
+%\end{equation}
+%El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,...,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
+%\end{Dem}
 Otras definiciones importantes sobre simplejos se enuncian a continuacion:
 \begin{Defi}[Caras de un simplejo]
 Sea $\sigma$ el simplejo generado por $a_0,a_1,...,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,...,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
@@ -145,14 +156,19 @@ El subcomplejo $\textit{K}^{(0)}$ es denominado el conjunto de vértices de $\te
 \begin{Teo}
 Sea $\abs{\textit{K}}$ la unión de los simplejos de $\textit{K}$, si asociamos a cada simplejo de $\textit{K}$ la topología natural como subespacio de $\mathbb{R}^N$, entonces podemos definir una topología para $\abs{\textit{K}}$ declarando  un conjunto $C$ de  $\abs{\textit{K}}$ cerrado si y sólo si para todo simplejo $\sigma$ en  $\textit{K}$, $\sigma\cap C$ es cerrado en $\sigma$.
 \end{Teo}
-
+El espacio $\abs{K}$ es llamado el espacio subyacente de $K$ o el politopo de $K$
 \begin{Defi}[Esquema de vértices]
 Sea $K$ un complejo simplicial, sea $V$ el conjunto de vértices de $K$ y $\mathcal{R}$ la colección de todos los subconjuntos de $V$ tales que generan un simplejo de K. La colección $\mathcal{R}$ es llamadada el esquema de vértices de $K$.
 \end{Defi}
+\subsection{Mapas simpliciales}
+\begin{Teo}
+Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,...,v_n$ cumplen que los puntos $f(v_0),...,f(v_n)$ son vértices de un simplejo de $L$. Entonces $f$ puede extenderse a un mapa continuo $\abs{f}:\abs{K}  \rightarrow \abs{L}$ tal que:
+Para todo  $x= \sum_{i=0}^{n}t_i(x)v_i$ en $\sigma$ se tiene que $\abs{f}(x)= \sum_{i=0}^{n}t_i(x)f(v_i)$.
+\end{Teo}
 \section{Complejos simpliciales abstractos}
 A continuación introduciremos la noción de complejo simplicial abstracto y su relación con un complejo simplicial.
 \begin{Defi}[Complejo simplicial abstracto]
-Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está. Un elemento $\textit{A}$ $\mathcal{S}$ es llamado un simplejo se $\mathcal{S}$. 
+Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está. Un elemento $\textit{A}$ de $\mathcal{S}$ es llamado un simplejo de $\mathcal{S}$. 
 \end{Defi}
 Analogamente a un complejo simplicial, podemos definir la dimensión, el conjunto de vértices y simplejos de un complejo simplicial abstracto.
 \begin{Ejem}
