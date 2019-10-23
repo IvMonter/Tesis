@@ -100,7 +100,7 @@ $t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue 
 \begin{equation}
 x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbf{R}^N$,  y definimos la función lineal $T\colon \mathbf{R^N}\rightarrow \mathbf{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, de modo que $T(x) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbf{R}^N$,  y definimos la función lineal $T\colon \mathbf{R^N}\rightarrow \mathbf{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, tenemos que $T(x) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
 %Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),...,t_n(x),0,...,0)$.
 %\begin{Prop}
@@ -145,7 +145,7 @@ Sean $\textit{K}$ y $\textit{L}$ complejos simpliciales, tales que $\textit{L}$ 
 \end{Defi}
 
 \begin{Prop}
-Si $\textit{L}$ es una subcolleción de un complejo simplcial $\textit{K}$, tal que contiene todas las caras de sus elementos, entonces $\textit{L}$ es un subcomplejo de $\textit{K}$.
+Si $\textit{L}$ es una subcolección de un complejo simplcial $\textit{K}$, tal que contiene todas las caras de sus elementos, entonces $\textit{L}$ es un subcomplejo de $\textit{K}$.
 \end{Prop}
 
 \begin{Defi}
@@ -156,14 +156,38 @@ El subcomplejo $\textit{K}^{(0)}$ es denominado el conjunto de vértices de $\te
 \begin{Teo}
 Sea $\abs{\textit{K}}$ la unión de los simplejos de $\textit{K}$, si asociamos a cada simplejo de $\textit{K}$ la topología natural como subespacio de $\mathbb{R}^N$, entonces podemos definir una topología para $\abs{\textit{K}}$ declarando  un conjunto $C$ de  $\abs{\textit{K}}$ cerrado si y sólo si para todo simplejo $\sigma$ en  $\textit{K}$, $\sigma\cap C$ es cerrado en $\sigma$.
 \end{Teo}
-El espacio $\abs{K}$ es llamado el espacio subyacente de $K$ o el politopo de $K$
+\begin{Dem}
+
+Primero veamos que la intersección  arbitraria de cerrados es cerrada. Supongamos que para toda simplejo $\sigma$, $C_{\alpha}$ cumple que $\sigma\cap C_{\alpha}$ es cerrado en $\sigma$, para toda $\alpha$ en $I\subset \mathbf{R}$.
+Sea $C = \cap_{\alpha \in I}C_{\alpha}$, entonces $C\cap\sigma = \cap_{\alpha\in I}(C_{\alpha}\cap\alpha)$, como cada $C_{\alpha}\cap \sigma$ es cerrado en $\sigma$, su intensección tambien lo es.
+
+Ahora veamos que la unión finita de de cerrados es cerrada. Sean $C_1,...,C_n$ cerrados en $\abs{K}$, entonces para todo $\sigma$ en $K$ tenemos que $C_i \cap \sigma$ es cerrado en $\sigma$ para toda $i =1,...,n$ y como la unión finita de cerrados en $\sigma$ es cerrada tenemos que $\cup C_i\cap\sigma = (\cup C_i)\cap\sigma$ es cerrado en $\sigma$.
+\end{Dem}
+El espacio $\abs{K}$ es llamado el \textbf{espacio subyacente} de $K$ o el \textbf{politopo} de $K$.
+
+Un ejercicio interesante es comparar la topología definida en $\abs{K}$, con la topología usual como subespacio de $R^{N}$. Notemos que si $B$ es cerrado en $\abs{K}$ con la topología usual, para todo $\sigma$ en $K$, tenemos que $B\cap\sigma$ es cerrado en $\sigma$ y por lo tanto $B$ es cerrado en $\abs{K}$. Por lo tanto la topología usual está contenida en la topología subyacente. Para ver que en general no se da la doble contención consideremoss el siguiente ejemplo.
+\begin{Ejem}
+bsbjsdjhsjd
+\end{Ejem}
+Como ya vimos las dos topologías son diferentes en general, pero si $K$ es finito no es difícil probar que las dos topologías son la misma, como veremos a continuación.
+\begin{Prop}
+Sea K un complejo simplicial finito. Entonces la topología subyacente y la topología usual en $\abs{K}$ son la misma.
+\end{Prop}
+\begin{Dem}
+
+Primero notemos que $\abs{K}$ es la unión finita de cerrados en $\mathbf{R}^N$ de donde se sigue que $\abs{K}$ es cerrado en $\mathbf{R}^N$. Por lo tanto los cerrados en $\abs{K}$ con la topología usual son cerados en $\mathbf{R}^N$ que están contenidos en $\abs{K}$.
+Supongamos $C$ cerrado en $\abs{K}$, entonces $C\cap\sigma$ es cerrado en $\sigma$ para toda $\sigma$ y como $\sigma$ es cerrado en $\mathbf{R}^N$, $C\cap\sigma$ también lo es. Luego podemos escribir a $C$ como la unión finita de cerrados en  $\mathbf{R}^N$ de la siguiente forma $C=\cup_{\sigma\in K}C\cap\sigma$, de donde se sigue que $C$ es cerrado en $\mathbf{R^N}$.
+\end{Dem}
 \begin{Defi}[Esquema de vértices]
 Sea $K$ un complejo simplicial, sea $V$ el conjunto de vértices de $K$ y $\mathcal{R}$ la colección de todos los subconjuntos de $V$ tales que generan un simplejo de K. La colección $\mathcal{R}$ es llamadada el esquema de vértices de $K$.
 \end{Defi}
 \subsection{Mapas simpliciales}
 \begin{Teo}
 Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,...,v_n$ cumplen que los puntos $f(v_0),...,f(v_n)$ son vértices de un simplejo de $L$. Entonces $f$ puede extenderse a un mapa continuo $\abs{f}:\abs{K}  \rightarrow \abs{L}$ tal que:
-Para todo  $x= \sum_{i=0}^{n}t_i(x)v_i$ en $\sigma$ se tiene que $\abs{f}(x)= \sum_{i=0}^{n}t_i(x)f(v_i)$.
+\begin{equation*}
+\abs{f}(x)= \sum_{i=0}^{n}t_i(x)f(v_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)v_i
+\end{equation*}
+
 \end{Teo}
 \section{Complejos simpliciales abstractos}
 A continuación introduciremos la noción de complejo simplicial abstracto y su relación con un complejo simplicial.
@@ -190,6 +214,7 @@ Sea $S$ un complejo simplicial abstracto y K un complejo simplicial tal que el e
 \end{Defi}
 Notemos que para un complejo simplicial abstracto $S$ pueden existir una infinidad de realizaciones geométricas, sin embargo si K y $K^{'}$ son realizaciones geométricas de K 
 
-
+\section{Realización Geométrica}
+blabla
 
 
