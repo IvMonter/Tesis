@@ -1,5 +1,5 @@
 \chapter{Complejos simpliciales}
-En este capítulo introduciremos la noción de complejo simplicial y complejo simplicial abstracto, así como la relación entre ellos.
+El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir de el complejo simplicial abstracto de completas de $G$, es por ello que en este capítulo introduciremos la definición de complejo simplicial y complejo simplicial abstracto.
 \section{Complejos simpliciales en $\mathbb{R}^N$}
 \subsection{Simplejos}  
 El primer paso para definir un complejo simplicial, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
@@ -52,7 +52,7 @@ Ejemplos:
 \end{enumerate}
 
 \begin{Defi}[Simplejo]
-Sea $\{a_0,..,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $\sigma$ generado por $a_0,...,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
+Sea $\{a_0,..,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $n-\sigma$ generado por $a_0,...,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
 \begin{equation}\label{s2}
 \begin{split}
 x = \sum_{i=0}^{n}t_ia_i,\\
@@ -100,7 +100,7 @@ $t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue 
 \begin{equation}
 x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, tenemos que $T(x) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, tenemos que $T(x-x_0) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
 %Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),...,t_n(x),0,...,0)$.
 %\begin{Prop}
@@ -167,7 +167,7 @@ El espacio $\abs{K}$ es llamado el \textbf{espacio subyacente} de $K$ o el \text
 
 El siguiente teorema nos permite caracteterizar las funciones continuas de $\abs{K}$ en algún espacio topológico.
 \begin{Teo}\label{ttc}
-Un mapa $f\colon \abs{K}\rightarrow X$ es continuo si y sólo si $f|_{\sigma}$ es continua para cada $\sigma$ en $\abs{K}$
+Un mapa $f\colon \abs{K}\rightarrow X$ es continuo si y sólo si $f|_{\sigma}$ es continua para cada $\sigma$ en $K$
 \end{Teo}
 \begin{Teo}
 $\abs{K}$ es Hausdorff
@@ -185,7 +185,7 @@ Sea K un complejo simplicial finito. Entonces la topología subyacente y la topo
 \end{Prop}
 \begin{Dem}
 
-Primero notemos que $\abs{K}$ es la unión finita de cerrados en $\mathbb{R}^N$ de donde se sigue que $\abs{K}$ es cerrado en $\mathbb{R}^N$. Por lo tanto los cerrados en $\abs{K}$ con la topología usual son cerados en $\mathbb{R}^N$ que están contenidos en $\abs{K}$.
+Primero notemos que $\abs{K}$ es la unión finita de cerrados en $\mathbb{R}^N$ de donde se sigue que $\abs{K}$ es cerrado en $\mathbb{R}^N$. Por lo tanto los cerrados en $\abs{K}$ con la topología usual son cerrados en $\mathbb{R}^N$ que están contenidos en $\abs{K}$.
 Supongamos $C$ cerrado en $\abs{K}$, entonces $C\cap\sigma$ es cerrado en $\sigma$ para toda $\sigma$ y como $\sigma$ es cerrado en $\mathbb{R}^N$, $C\cap\sigma$ también lo es. Luego podemos escribir a $C$ como la unión finita de cerrados en  $\mathbb{R}^N$ de la siguiente forma $C=\cup_{\sigma\in K}C\cap\sigma$, de donde se sigue que $C$ es cerrado en $\mathbb{R^N}$.
 \end{Dem}
 \begin{Defi}[Esquema de vértices]
@@ -227,27 +227,32 @@ A continuación introduciremos la noción de complejo simplicial abstracto y su 
 \begin{Defi}[Complejo simplicial abstracto]
 Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está. Un elemento $\textit{A}$ de $\mathcal{S}$ es llamado un simplejo de $\mathcal{S}$. 
 \end{Defi}
-Analogamente a un complejo simplicial, podemos definir la dimensión, el conjunto de vértices y simplejos de un complejo simplicial abstracto.
 \begin{Ejem}
 El esquema de vértices de un complejo simplicial es un complejo simplicial abstracto.
 \end{Ejem}
+\begin{Ejem}
+Dada una gráfica $G$, denotemos por $\Delta(G)$ la colección de completas de $G$. Es fácil ver que si $c$ es una completa de $G$ entonces cualquier subconjunto no vacío $s$ de $c$ es una completa. Ya que si $x$ y $y$ pertenecen a $s$ entonces $x$ y $y$ pertenecen a $c$ y por lo tanto son adyacentes. En consecuencia $\Delta(G)$ es un complejo simplicial abstracto.
+\end{Ejem}
+Análogamente a un complejo simplicial, podemos definir la dimensión, el conjunto de vértices y simplejos de un complejo simplicial abstracto.
 \begin{Defi}
-Dos complejos simpliciales abstractos S y T son isomorfos si existe una función f de V(K) en V(T) tal que biyectiva tal que 
+El conjunto de vértices $V$ de un complejo simplicial abstracto $\mathcal{S}$ es la unión de sus elementos unipuntuales.
+\end{Defi}
+No haremos disticción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\mathcal{S}$.
+\begin{Defi}
+Dos complejos simpliciales abstractos $\mathcal{S}$ y $\mathcal{T}$ son isomorfos si existe una función biyectiva $f$ de $V(\mathcal{K})$ en $V(\mathcal{T})$ tal que $\{a_0,...,a_n\}$ está en $\mathcal{S}$ si y sólo si $\{f(a_0),...,f(a_n)\}$ está en $\mathcal{T}$.
 \end{Defi}
 El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales abstractos es el siguiente:
-\begin{Teo} 
+\begin{Teo}\label{tpc} 
 ~\begin{enumerate}
-\item Todo complejo simplicial abstracto $S$ es isomorfo al esquema de vértices de algún complejo simplicial K.
+\item Todo complejo simplicial abstracto $\mathcal{S}$ es isomorfo al esquema de vértices de algún complejo simplicial $K$.
 \item Dos complejos simpliciales son linealmente isomorfos si y sólo si sus esquemas de vértices son isomorfos como complejos simpliciales abstractos.
 \end{enumerate}
 \end{Teo}
 
+\section{Realización geométrica}
 \begin{Defi}
-Sea $S$ un complejo simplicial abstracto y K un complejo simplicial tal que el esquema de vértices de K es isomorfo a S, decimos que K es una realización geométrica de $S$.
+Sea $\mathcal{S}$ un complejo simplicial abstracto y $K$ un complejo simplicial tal que el esquema de vértices de $K$ es isomorfo a $\mathcal{S}$, decimos que $K$ es una realización geométrica de $\mathcal{S}$.
 \end{Defi}
-Notemos que para un complejo simplicial abstracto $S$ pueden existir una infinidad de realizaciones geométricas, sin embargo si K y $K^{'}$ son realizaciones geométricas de K 
-
-\section{Realización Geométrica}
-blabla
+Notemos que para un complejo simplicial abstracto $\mathcal{S}$ pueden existir una infinidad de realizaciones geométricas, sin embargo si $K$ y $K^{'}$ son realizaciones geométricas de $\mathcal{S}$ entonces sus esquemas de vértices son isomorfos y por el teorema \ref{tpc} $K$ y $K^{'}$ son homeomorfos. De modo que la realización geométrica es única salvo homeomorfismo.
 
 
