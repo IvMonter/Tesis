@@ -1,4 +1,24 @@
-\section{Conjuntos parcialmente ordenados}
+\chapter{Conjuntos parcialmente ordenados}
+Los complejos simpliciales abstractos y los conjuntos parcialmente ordendos están intrínsecamente relacionados ya que dado un complejo simplicial abstracto se puede construir un conjunto parcialmente ordenado a partir de ordenar los simplejos de $K$ por contención. Luego dado un conjunto parcialmente ordenado $P$ se puede construir un complejo simplicial tomando como simplejos las cadenas de $P$. 
+En está sección mostraremos que 
+\section{Complejo simplicial ordenado}
+\begin{Defi}[Complejo ordenado]
+Sea $P$ un conjunto parcialmente ordenado, el complejo ordenado de $P$, denotado por $\Delta(P)$, es el complejo simplicial abstracto formado por las cadenas no vacías en $P$.
+\end{Defi}
+
+\begin{Defi}
+Sea $P$ un conjunto parcialmente ordenado, la realización geométrica de $P$ se define como la realización geométrica de $\Delta(P)$ y se denota por $\abs{P}$ 
+\end{Defi}
+
+Notemos que el conjunto de vértices de $\Delta(P)$ es precisaente $P$. No haremos distinción entre el punto $p$ en $P$ y el vértice que le corrresponde en $\abs{P}$.
+\begin{Teo}
+Sean $P$ y $Q$ conjuntos parcialmente ordenados y una función $f\colon P \rightarrow Q$ que preserva el orden, entonces $f$ induce un mapa simplicial de $\abs{P}$ en $\abs{Q}$.
+\end{Teo}
+\begin{Dem}
+Sean $p_1,...,p_n$ vértices de un simplejo en $\Delta(P)$, tales que $p_1\leqslant\dots \leqslant p_n$, como $f$ preserva el orden se tiene que $f(p_1)\leqslant\dots \leqslant f(p_n)$, por lo tanto $f(p_1)\dots f(p_n)$ son vértices de un simplejo en $\Delta(P)$. 
+\end{Dem}
+
+\section{Homeomorfismo de copos}
 \begin{Teo}
 Sea $P$ un conjunto parcialmente ordenado, estableciendo un orden en $P\times\{0,1\}$ tal que $(p,b)\leq (p^{'},b^{'})$ si y sólo si $p\leq p^{'}$ y $b\leq b^{'}$ se tiene que $\abs{P\times\{0,1\}}$ es homeomorfo a $\abs{P}\times[0,1]$
 \end{Teo} 
@@ -106,7 +126,7 @@ $\hat{\abs{H}}(x,1)= \abs{H}(h((x,1)))=\abs{H}((x,1)) = \abs{g}(x)$.
 \begin{Col}
 Sea P un conjunto parcialmente ordenado con un elemento máximo, entonces $\abs{P}$ es contraíble.
 \end{Col}
-\section{Otro teorema}
+\section{Conjuntos parcialmente ordenados contraíbles}
 \begin{Teo}
 Sea $X$ un espacio contraíble y $f$ una función de $S^n$ en $X$. Entonces f puede extenderse a una función de $D^{n+1}$ en X.
 \end{Teo}
@@ -132,4 +152,25 @@ G(u,1) = H(f(u),1) = x_0\\
 G(u^{'},1)=H(f(u^{'},1) = x_0
 \end{eqnarray}
 Por lo tanto existe $\bar{G}$ continua de $S^n\times I /{\sim}$ en $X$.
+\end{Dem}
+
+\section{Soportes contraíbles}
+\begin{Defi}
+Suponga $K$ un complejo simplicial abstracto y $X$ un espacio. Una función $C$ la cual envía simplejos de $K$ a subespacios de $X$ es un soporte contraíble si:
+\begin{itemize}
+\item Para todo simplejo $\sigma$ de $K$, $C(\sigma)$ es contraíble.
+\item Si $\tau$ es una cara de $\sigma$, entonces $C(\tau)\subset C(\sigma)$
+\end{itemize}
+\end{Defi}
+
+\begin{Teo}
+Si $C$ es un soporte contraíble de un complejo simplicial abstracto finito $K$ a un espacio $X$, entonces
+\begin{itemize}
+\item Existe una función continua $g\colon \abs{K}\rightarrow X$ soportada por $C$.
+\item Cualesquiera dos funciones continuas soportadas por $C$ son homotópicas.
+\end{itemize}
+\end{Teo}
+\begin{Dem}
+
+Por inducción ....
 \end{Dem}
