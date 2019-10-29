@@ -78,7 +78,7 @@ En esta sección estudiaremos la primera subdivisión baricéntrica de una gráf
 
 En general la primera subdivisión baricéntrica se puede definir para cualquier complejo simplicial abstracto y en el caso de complejos simpliciales en $\mathbb{R}^N$ se utiliza precisamente el baricentro de cada simplejo de ahí el nombre.
 
-Antes de definir la subdivisión barecéntrica es necesario introducir las siguientes definiciones:
+Antes de definir la subdivisión baricéntrica es necesario introducir las siguientes definiciones:
 
 \begin{Defi}[Copo de simplejos]
 Sea $\Delta$ una complejo simplicial abstracto, el copo de simplejos de $\Delta$ es el conjunto parcialmente ordenado definido como $P(\Delta) = (\Delta,\subseteq)$. 
@@ -103,6 +103,38 @@ Sea $\Delta = \{\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}$, el copo 
 Luego el complejo ordenado de $P(\Delta)$, denotado por $\Delta(P(\Delta))$ es el conjunto que contiene todas las cadenas en $P(\Delta)$, teniendo un total de 25 elementos.
 \end{Ejem}
 
+
+
+\begin{Teo}
+Sea $\Delta$ un complejo simplicial abstracto finito, entonces $\Delta$ y $sd\Delta$ son homeomorfos.
+\end{Teo}
+
+\begin{Dem}
+Los vértices de un simplejo en $sd\Delta$ son simplejos de $\Delta$, de la forma $\{\sigma_0,\sigma_1,...,\sigma_n\}$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$.
+Luego si $\sigma_i = \{b_{i0},...,b_{ir_i}\}$ para $i = 1,...,n$, podemos definir la función $f\colon V(sd\Delta) \rightarrow \abs{\Delta}$ como sigue:
+\begin{equation*}
+f(\sigma_{i})= b_{\sigma_{i}}
+\end{equation*}
+Donde $b_{\sigma_{i}}$ es el baricentro de $\sigma_{i}$ definido como $b_{\sigma_i} = \frac{1}{r_i+1}b_{i0}+...+\frac{1}{r_i+1}b_{ir}$.
+Como $\sigma_{i}$ es un conjunto convexo, se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{i}$, además como $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ se tiene que $b_{\sigma_{i}}$ pertecene a $\sigma_{n}$.
+Así $f$ cumple que los puntos $f(\sigma_0),...,f(\sigma_n)$ pertenen al simplejo $\sigma_{n}$ y por el teorema \ref{tms} puede extenderse a un mapa continua $g\colon \abs{sd\Delta}\rightarrow\abs{\Delta}$ tal que:
+\begin{equation*}
+g(x)= \sum_{i=0}^{n}t_i(x)f(\sigma_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)\sigma_i
+\end{equation*}
+Como $\Delta$ es finito $sd\Delta$ también lo es y por lo tanto $\abs{sd\Delta}$ es compacto. De modo que para mostrar que $g$ es un homeomorfismo basta probar que $g$ es biyectiva.
+Claramente $g$ es inyectiva, para mostrar la sobreyectividad consideremos $b$ en $\abs{\Delta}$, entonces $b = t_0(b)b_0 +\dots +t_n(b)b_n$ con $b_0,..,b_n$ vértices de un simplejo de $\Delta$ tales que $t_0(b)\geq \dots\geq t_n$.
+Entonces $\sigma_0 = \{b_0\}$,..., $\sigma_n = \{b_0,...,b_n\}$ son simplejos de $\Delta$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ por lo tanto son vértices de un simplejo en $sd\Delta$.
+Consideremos el punto $x = c_0\sigma_0+\dots+c_n\sigma_n$, con $c_k = (k+1)(t_k-t_{k+1})$ para $k = 0,..,n-1$ y $c_n = (n+1)t_n$, tenemos que $c_k\geq 0$ para toda $k$ y además 
+$\sum_{i= 0}^{n}c_i = \sum_{i = 0}^{n}t_i(b) = 1$, por lo tanto $x$ está en $\abs{sd\Delta}$. 
+Luego
+\begin{align*}
+&g(x) = \sum_{i = 0}^{n}c_ib_{\sigma_i}\\
+&=c_0b_0 + c_1(\frac{1}{2}b_0 + \frac{1}{2}b_1)+\dots +c_n(\frac{1}{n+1}b_0+\dots +\frac{1}{n+1}b_n)\\
+&= b_0(c_0+ \frac{1}{2}c_1+\dots + \frac{1}{n+1}c_n)+\dots +b_{n-1}{\frac{1}{n}c_{n-1}+\frac{1}{n+1}c_n} + b_n\frac{c_n}{n+1}\\
+&= t_0(b)b_0+\dots +t_n(b)b_n = b
+\end{align*}  
+\end{Dem}
+
 \begin{Defi} 
 El nervio de una familia de subconjuntos ${\{A_i\}}_{i\in I}$, denotado por $\mathcal{N}(A_i)$, es el complejo simplicial abstracto definido sobre los vértices $I$ tal que un subconjunto finito $\sigma \subseteq I$ está en $\mathcal{N}(A_i)$ si y sólo si ${\cup}_{i\in \sigma}A_i \neq \emptyset$
 \end{Defi}
@@ -111,18 +143,3 @@ Sea G una gráfica, consideremos la colección de clanes de G, $\mathcal{C}(G) =
 
 Por lo tanto $\mathcal{N}(q_i)$ es isomorfo a un subcomplex de $\Delta(K(G))$, por simplicidad denotaremos a $\mathcal{N}(q_i)$ como $\mathcal{N}(G)$ y diremos que $\mathcal{N}(G)\subseteq \Delta(K(G))$.
 \end{Ejem}
-
-\begin{Teo}
-Sea $\Delta$ un complejo simplicial abstracto, $\Delta$ y $sd\Delta$ son homeomorfos.
-\end{Teo}
-
-\begin{Dem}
-Los vértices de un simplejo en $sd\Delta$ son simplejos de $\Delta$ de la forma $\{\sigma_0,\sigma_1,...,\sigma_n\}$ tales que $\sigma_0\subset \sigma_1\subset..\subset\sigma_n$.
-
-Si consideramos la función 
-\begin{equation*}
-\sigma_{i} \rightarrow b_{\sigma_{i}}
-\end{equation*}
-Donde $b_{\sigma_{i}}$ es el baricentro de $\sigma_{i}$.
-Como $\sigma_{i}$ es un conjunto convexo, se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{i}$, además se tiene que $b_{\sigma_{i}}$ pertecene a $\sigma_{n}$.
-\end{Dem}
