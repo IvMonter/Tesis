@@ -85,7 +85,7 @@ Sea $\Delta$ una complejo simplicial abstracto, el copo de simplejos de $\Delta$
 \end{Defi}
 
 \begin{Defi}[Primera subdivisión baricéntrica]
-Sea $\Delta$ un complejo simplicial abstracto, definimos la primera subdivisión baricéntrica de $\Delta$ como el complejo ordenado $sd\Delta = \Delta(P(\Delta))$.
+Sea $\Delta$ un complejo simplicial abstracto, definimos la primera subdivisión baricéntrica de $\Delta$ como el complejo ordenado $\sd\Delta = \Delta(P(\Delta))$.
 \end{Defi}
 \begin{Ejem}
 Sea $\Delta = \{\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}$, el copo de simplejos de $\Delta$, $P(\Delta)$, se obtiene de asignar un orden por contención a $\Delta$, con lo que se forman las siguientes cadenas maximales:
@@ -103,26 +103,26 @@ Luego el complejo ordenado de $P(\Delta)$, denotado por $\Delta(P(\Delta))$ es e
 
 
 \begin{Teo}
-Sea $\Delta$ un complejo simplicial abstracto finito, entonces $\Delta$ y $sd\Delta$ son homeomorfos.
+Sea $\Delta$ un complejo simplicial abstracto finito, entonces $\Delta$ y $\sd\Delta$ son homeomorfos.
 \end{Teo}
 
 \begin{Dem}
-Los vértices de un simplejo en $sd\Delta$ son simplejos de $\Delta$, de la forma $\{\sigma_0,\sigma_1,...,\sigma_n\}$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$.
-Luego si $\sigma_i = \{b_{i0},...,b_{ir_i}\}$ para $i = 1,...,n$, podemos definir la función $f\colon V(sd\Delta) \rightarrow \abs{\Delta}$ como sigue:
+Los vértices de un simplejo en $\sd\Delta$ son simplejos de $\Delta$, de la forma $\{\sigma_0,\sigma_1,...,\sigma_n\}$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$.
+Luego si $\sigma_i = \{b_{i0},...,b_{ir_i}\}$ para $i = 1,...,n$, podemos definir la función $f\colon V(\sd\Delta) \rightarrow \abs{\Delta}$ como sigue:
 \begin{equation*}
 f(\sigma_{i})= b_{\sigma_{i}}
 \end{equation*}
 Donde $b_{\sigma_{i}}$ es el baricentro de $\sigma_{i}$ definido como $b_{\sigma_i} = \frac{1}{r_i+1}b_{i0}+...+\frac{1}{r_i+1}b_{ir}$.
 Como $\sigma_{i}$ es un conjunto convexo, se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{i}$, además como $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ se tiene que $b_{\sigma_{i}}$ pertecene a $\sigma_{n}$.
-Así $f$ cumple que los puntos $f(\sigma_0),...,f(\sigma_n)$ pertenen al simplejo $\sigma_{n}$ y por el teorema \ref{tms} puede extenderse a un mapa continua $g\colon \abs{sd\Delta}\rightarrow\abs{\Delta}$ tal que:
+Así $f$ cumple que los puntos $f(\sigma_0),...,f(\sigma_n)$ pertenen al simplejo $\sigma_{n}$ y por el teorema \ref{tms} puede extenderse a un mapa continua $g\colon \abs{\sd\Delta}\rightarrow\abs{\Delta}$ tal que:
 \begin{equation*}
 g(x)= \sum_{i=0}^{n}t_i(x)f(\sigma_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)\sigma_i
 \end{equation*}
-Como $\Delta$ es finito $sd\Delta$ también lo es y por lo tanto $\abs{sd\Delta}$ es compacto. De modo que para mostrar que $g$ es un homeomorfismo basta probar que $g$ es biyectiva.
+Como $\Delta$ es finito $\sd\Delta$ también lo es y por lo tanto $\abs{\sd\Delta}$ es compacto. De modo que para mostrar que $g$ es un homeomorfismo basta probar que $g$ es biyectiva.
 Claramente $g$ es inyectiva, para mostrar la sobreyectividad consideremos $b$ en $\abs{\Delta}$, entonces $b = t_0(b)b_0 +\dots +t_n(b)b_n$ con $b_0,..,b_n$ vértices de un simplejo de $\Delta$ tales que $t_0(b)\geq \dots\geq t_n$.
-Entonces $\sigma_0 = \{b_0\}$,..., $\sigma_n = \{b_0,...,b_n\}$ son simplejos de $\Delta$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ por lo tanto son vértices de un simplejo en $sd\Delta$.
+Entonces $\sigma_0 = \{b_0\}$,..., $\sigma_n = \{b_0,...,b_n\}$ son simplejos de $\Delta$ tales que $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ por lo tanto son vértices de un simplejo en $\sd\Delta$.
 Consideremos el punto $x = c_0\sigma_0+\dots+c_n\sigma_n$, con $c_k = (k+1)(t_k-t_{k+1})$ para $k = 0,..,n-1$ y $c_n = (n+1)t_n$, tenemos que $c_k\geq 0$ para toda $k$ y además 
-$\sum_{i= 0}^{n}c_i = \sum_{i = 0}^{n}t_i(b) = 1$, por lo tanto $x$ está en $\abs{sd\Delta}$. 
+$\sum_{i= 0}^{n}c_i = \sum_{i = 0}^{n}t_i(b) = 1$, por lo tanto $x$ está en $\abs{\sd\Delta}$. 
 Luego
 \begin{align*}
 &g(x) = \sum_{i = 0}^{n}c_ib_{\sigma_i}\\

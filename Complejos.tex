@@ -1,10 +1,10 @@
 \chapter{Complejos simpliciales}
-El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir de el complejo simplicial abstracto de completas de $G$, es por ello que en este capítulo introduciremos la definición de complejo simplicial y complejo simplicial abstracto.
+El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir del complejo simplicial abstracto de completas de $G$, es por ello que en este capítulo introduciremos la definición de complejo simplicial y complejo simplicial abstracto.
 \section{Complejos simpliciales en $\mathbb{R}^N$}
 \subsection{Simplejos}  
 El primer paso para definir un complejo simplicial, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
 \begin{Defi}[Independencia geométrica]
-Dado un conjunto finito $\{a_0,..,a_n\}$ de puntos en $\mathbb{R}^{N}$, el conjunto es geométricamente independiente si la única solución al sistema 
+Dado un conjunto finito $\{a_0,\ldots,a_n\}$ de puntos en $\mathbb{R}^{N}$, el conjunto es geométricamente independiente si la única solución al sistema 
 \begin{equation}\label{s1}
     \begin{split}
      &\sum_{i=0}^{n}t_{i} = 0 \\
@@ -17,16 +17,16 @@ es $t_i = 0$ para toda $i$.
 
 \begin{Teo}
 ~\begin{enumerate}[(a)]
-    \item El conjunto $\{a_0,...,a_n\}$ es geométricamente independiente si y sólo si $\{a_1-a_0,..,a_n-a_0\}$ es linealmente independiente.
-    \item Si $\{a_0,...,a_n\}$ es geométricamente independiente entonces para todo subconjunto no vacío $A$ de $\{a_0,..,a_n\}$, $A$ es geométricamente independiente.
+    \item El conjunto $\{a_0,\ldots,a_n\}$ es geométricamente independiente si y sólo si $\{a_1-a_0,\cdots,a_n-a_0\}$ es linealmente independiente.
+    \item Si $\{a_0,\cdots,a_n\}$ es geométricamente independiente entonces para todo subconjunto no vacío $A$ de $\{a_0,\ldots,a_n\}$, $A$ es geométricamente independiente.
 \end{enumerate}
 \end{Teo}
 
 \begin{Dem}
 \begin{enumerate}[(a)]
-\item Supongamos $\{a_0,...,a_n\}$ geométricamente independiente, si existe una combinación lineal de $\{a_1-a_0,...,a_n-a_0\}$ tal que $\sum_{i=1}^{n}t_i(a_i-a_0)=0$, reagrupando términos tenemos que $\sum_{i=1}^{n}t_ia_i + (-\sum_{i=1}^{n}t_i)a_0=0$, haciendo $t_0 = -\sum_{i=1}^{n}t_i$, se cumple \ref{s1}, al ser $\{a_0,...,a_n\}$ geométricamente independientes se tiene que $t_i=0$ para toda $i$.
+\item Supongamos $\{a_0,\cdots,a_n\}$ geométricamente independiente, si existe una combinación lineal de $\{a_1-a_0,\ldots,a_n-a_0\}$ tal que $\sum_{i=1}^{n}t_i(a_i-a_0)=0$, reagrupando términos tenemos que $\sum_{i=1}^{n}t_ia_i + (-\sum_{i=1}^{n}t_i)a_0=0$, haciendo $t_0 = -\sum_{i=1}^{n}t_i$, se cumple \ref{s1}, al ser $\{a_0,\ldots,a_n\}$ geométricamente independientes se tiene que $t_i=0$ para toda $i$.
 
-Ahora supongamos que el conjunto $\{a_1-a_0,...,a_n-a_0\}$ es linealmente independiente, si $t_0,...,t_n$ son solución del sistema en \ref{s1}, entonces 
+Ahora supongamos que el conjunto $\{a_1-a_0,\ldots,a_n-a_0\}$ es linealmente independiente, si $t_0,\ldots,t_n$ son solución del sistema en \ref{s1}, entonces 
 \begin{align*}
  0&=\sum_{i=0}^{n}t_ia_i\\
  &=\sum_{i=0}^{n}t_ia_i + -(\sum_{i=0}^{n}t_i)a_0\\
@@ -35,12 +35,12 @@ Ahora supongamos que el conjunto $\{a_1-a_0,...,a_n-a_0\}$ es linealmente indepe
  &=\sum_{i=1}^{n}t_i(a_i-a_0)
 \end{align*}
 Por lo tanto $t_i=0$ para toda $i$.
-\item Basta demostrar que al quitarle un elemento al conjunto $\{a_0,...,a_n\}$
+\item Basta demostrar que al quitarle un elemento al conjunto $\{a_0,\cdots,a_n\}$
 el conjunto resultante es geométricamente independiente, sin pérdida
-de generalidad consideremos $\{a_0,...,a_n\}\backslash\{a_n\}$, por (a) tenemos que el
-conjunto $\{a_1-a_0,...,a_n-a_0\}$ es linealmente independiente, y al quitarle
+de generalidad consideremos $\{a_0,\ldots,a_n\}\backslash\{a_n\}$, por (a) tenemos que el
+conjunto $\{a_1-a_0,\ldots,a_n-a_0\}$ es linealmente independiente, y al quitarle
 $a_n-a_0$ sigue siendo linealmente independiente y nuevamente por (a) 
-tenemos que $\{a_0,...,a_n\}\backslash\{a_n\}$ es geométricamente independiente.
+tenemos que $\{a_0,\ldots,a_n\}\backslash\{a_n\}$ es geométricamente independiente.
 \end{enumerate}
 \end{Dem}
 Ejemplos:
@@ -52,7 +52,7 @@ Ejemplos:
 \end{enumerate}
 
 \begin{Defi}[Simplejo]
-Sea $\{a_0,..,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $n-\sigma$ generado por $a_0,...,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
+Sea $\{a_0,\cdots,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $n-\sigma$ generado por $a_0,\cdots,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
 \begin{equation}\label{s2}
 \begin{split}
 x = \sum_{i=0}^{n}t_ia_i,\\
@@ -61,7 +61,7 @@ x = \sum_{i=0}^{n}t_ia_i,\\
 \end{equation}
 con $t_i\geqslant 0$ para toda i.
 
-Los puntos $a_0,...,a_n$ que generan a $\sigma$ son llamados los vértices de $\sigma$; y el número n la dimensión de $\sigma$.
+Los puntos $a_0,\ldots,a_n$ que generan a $\sigma$ son llamados los vértices de $\sigma$; y el número $n$ la dimensión de $\sigma$.
 \end{Defi}
 
 \begin{figure}[h]
@@ -88,7 +88,7 @@ Los puntos $a_0,...,a_n$ que generan a $\sigma$ son llamados los vértices de $\
 Notemos que para $x$ en $\sigma$ los coeficientes $t_i$ están determinados de manera única, ya que si $x = \sum_{i=0}^{n}t_ia_i$ y $x = \sum_{i=0}^{n}s_ia_i$ entonces los $t_i-s_i$ son solución del sistema \ref{s2} por lo que $t_i=s_i$ para toda $i$, lo que nos permite hacer la 
 siguiente definición.
 \begin{Defi}[Coordenadas baricéntricas]
-Sea $\sigma$ un simplejo generado por $a_0,...,a_n$, si $x$ es un punto en $\sigma$, $x$ es de la forma $x = \sum_{i=0}^{n}t_ia_i$ con $t_i\geqslant 0$, las coordenadas baricéntricas $\{t_i(x):i = 0,..n\}$ del punto $x$ en $\sigma$ con respecto a $a_0,...,a_n$ se definen como funciones de $\sigma$ en $\mathbb{R}^{N}$ tales que $t_i(x) = t_i$
+Sea $\sigma$ un simplejo generado por $a_0,\ldots,a_n$, si $x$ es un punto en $\sigma$, $x$ es de la forma $x = \sum_{i=0}^{n}t_ia_i$ con $t_i\geqslant 0$, las coordenadas baricéntricas $\{t_i(x):i = 0,..n\}$ del punto $x$ en $\sigma$ con respecto a $a_0,...,a_n$ se definen como funciones de $\sigma$ en $\mathbb{R}^{N}$ tales que $t_i(x) = t_i$
 \end{Defi}
 \begin{Prop}
 Las coordenadas baricéntricas son continuas.
@@ -98,11 +98,11 @@ Las coordenadas baricéntricas son continuas.
 Sea $x$ un punto en $\sigma$, entonces $x=\sum_{i=0}^{n}t_i(x)a_i$ con $\sum_{i=0}^{n}t_i(x)=1$ y 
 $t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue que 
 \begin{equation}
-x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
+ x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,...,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,...,a_n-a_0,b_{n+1},...b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,...,n$ y $T(b_i) = 0$ para todo $i = n+1,...,N$, tenemos que $T(x-x_0) = (t_1(x),...,t_n(x),0,...,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,\ldots,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,\ldots,a_n-a_0,b_{n+1},\ldots,b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,\ldots,n$ y $T(b_i) = 0$ para todo $i = n+1,\ldots,N$, tenemos que $T(x-x_0) = (t_1(x),\ldots,t_n(x),0,\ldots,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
-%Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),...,t_n(x),0,...,0)$.
+%Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),\ldots,t_n(x),0,\ldots,0)$.
 %\begin{Prop}
 %T es continua.
 %\end{Prop}
@@ -113,20 +113,20 @@ El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$ y p
 %\begin{equation}
 %x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 %\end{equation}
-%El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,...,a_n-a_0\}$y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,...,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
+%El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,\ldots,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
 %\end{Dem}
 Otras definiciones importantes sobre simplejos se enuncian a continuacion:
 \begin{Defi}[Caras de un simplejo]
-Sea $\sigma$ el simplejo generado por $a_0,a_1,...,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,...,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
+Sea $\sigma$ el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,\ldots,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
 \end{Defi}
 \begin{Defi}[Frontera e interior de un simplejo]
 Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de todas sus caras propias y se denota por $Bd\sigma$. El interior de $\sigma$ se define como int $\sigma = \sigma-Bd\sigma$. 
 \end{Defi}
 \begin{Prop}
-Para un simplex $\sigma$ generado por $a_0,...,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
+Para un simplex $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
 \begin{enumerate}[(a)]
-\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplex $S$ generado por $a_1,...,a_n$.
-\item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,...,a_n$.
+\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplex $S$ generado por $a_1,\ldots,a_n$.
+\item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
 \item Dado un simplex $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
 \item Existe un homeomorfismo f de $\sigma$ en la bola unitaria $B^n$, tal que $Bd\sigma$ es mapeada a $B^n$, es decir $f(Bd\sigma) = S^{n-1}$.
 \end{enumerate}
@@ -161,7 +161,7 @@ Sea $\abs{\textit{K}}$ la unión de los simplejos de $\textit{K}$, si asociamos 
 Primero veamos que la intersección  arbitraria de cerrados es cerrada. Supongamos que para toda simplejo $\sigma$, $C_{\alpha}$ cumple que $\sigma\cap C_{\alpha}$ es cerrado en $\sigma$, para toda $\alpha$ en $I\subset \mathbb{R}$.
 Sea $C = \cap_{\alpha \in I}C_{\alpha}$, entonces $C\cap\sigma = \cap_{\alpha\in I}(C_{\alpha}\cap\alpha)$, como cada $C_{\alpha}\cap \sigma$ es cerrado en $\sigma$, su intensección tambien lo es.
 
-Ahora veamos que la unión finita de de cerrados es cerrada. Sean $C_1,...,C_n$ cerrados en $\abs{K}$, entonces para todo $\sigma$ en $K$ tenemos que $C_i \cap \sigma$ es cerrado en $\sigma$ para toda $i =1,...,n$ y como la unión finita de cerrados en $\sigma$ es cerrada tenemos que $\cup C_i\cap\sigma = (\cup C_i)\cap\sigma$ es cerrado en $\sigma$.
+Ahora veamos que la unión finita de de cerrados es cerrada. Sean $C_1,\ldots,C_n$ cerrados en $\abs{K}$, entonces para todo $\sigma$ en $K$ tenemos que $C_i \cap \sigma$ es cerrado en $\sigma$ para toda $i =1,\ldots,n$ y como la unión finita de cerrados en $\sigma$ es cerrada tenemos que $\cup C_i\cap\sigma = (\cup C_i)\cap\sigma$ es cerrado en $\sigma$.
 \end{Dem}
 El espacio $\abs{K}$ es llamado el \textbf{espacio subyacente} de $K$ o el \textbf{politopo} de $K$.
 
@@ -193,7 +193,7 @@ Sea $K$ un complejo simplicial, sea $V$ el conjunto de vértices de $K$ y $\math
 \end{Defi}
 \subsection{Mapas simpliciales}
 \begin{Teo} \label{tms}
-Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow \abs{L}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,...,v_n$ cumplen que los puntos $f(v_0),...,f(v_n)$ pertenecen a un simplejo de $L$.
+Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow \abs{L}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ pertenecen a un simplejo de $L$.
 Entonces $f$ puede extenderse a un mapa continuo $g:\abs{K}  \rightarrow \abs{L}$ tal que:
 \begin{equation*}
 g(x)= \sum_{i=0}^{n}t_i(x)f(v_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)v_i
@@ -201,26 +201,26 @@ g(x)= \sum_{i=0}^{n}t_i(x)f(v_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)v_i
 \end{Teo}
 \begin{Dem}
 
-Los puntos $f(v_0),...,f(v_n)$ pertenecen a un simplejo $\tau$ de $L$, como $\tau$ es un conjunto convexo tenemos que $g(x)= \sum_{i=0}^{n}t_i(x)f(v_i)$ es un punto en $\tau$. Así $g$ mapea el simplejo $\sigma$ en un subconjunto del simplejo $\tau$.
+Los puntos $f(v_0),\ldots,f(v_n)$ pertenecen a un simplejo $\tau$ de $L$, como $\tau$ es un conjunto convexo tenemos que $g(x)= \sum_{i=0}^{n}t_i(x)f(v_i)$ es un punto en $\tau$. Así $g$ mapea el simplejo $\sigma$ en un subconjunto del simplejo $\tau$.
 
-Para mostrar la continuidad de $g$ por el teorema \ref{ttc} basta probar que $g$ restringida a $\sigma$ es continua. Sea $\epsilon > 0$ y sean $x$ un punto en $\sigma$, por la continuidad de las coordenadas baricéntricas existen números reales positivos $\delta_{0},...,\delta_{n}$ tales que:
+Para mostrar la continuidad de $g$ por el teorema \ref{ttc} basta probar que $g$ restringida a $\sigma$ es continua. Sea $\epsilon > 0$ y sean $x$ un punto en $\sigma$, por la continuidad de las coordenadas baricéntricas existen números reales positivos $\delta_{0},\ldots,\delta_{n}$ tales que:
 \begin{align*}
 &\text{Si }\parallel x-x^{'} \parallel < \delta_{i}\\
-&\text{entonces } \abs{t_i(x)-t_i(x^{'})}< \frac{\epsilon}{(n+1)(\parallel f(v_0)\parallel + ...+\parallel f(v_n)\parallel})
+&\text{entonces } \abs{t_i(x)-t_i(x^{'})}< \frac{\epsilon}{(n+1)(\parallel f(v_0)\parallel + \ldots+\parallel f(v_n)\parallel})
 \end{align*}
-Sea $\delta = \min\{\delta_0,...,\delta_n\}$ y $s = \parallel f(v_0)\parallel + ...+\parallel f(v_n)\parallel$, si $\parallel x-x^{'}\parallel< \delta$ entonces
+Sea $\delta = \min\{\delta_0,\ldots,\delta_n\}$ y $s = \parallel f(v_0)\parallel + \cdots+\parallel f(v_n)\parallel$, si $\parallel x-x^{'}\parallel< \delta$ entonces
 \begin{align*}
-&\parallel g(x)-g(x^{'})\parallel = \parallel(t_0(x)-t_0(x^{'}))f(v_0)\parallel+\dots+\parallel(t_n(x)-t_n(x^{'}))f(v_n)\parallel\\
-&< \abs{t_0(x)-t_0(x^{'})}\parallel f(v_0)\parallel+\dots +  \abs{t_n(x)-t_n(x^{'})}\parallel f(v_n)\parallel \\
-&< \abs{t_0(x)-t_0(x^{'})}s+\dots +  \abs{t_n(x)-t_n(x^{'})}s\\
-&< \frac{\epsilon}{n+1}+\dots + \frac{\epsilon}{n+1} = \epsilon
+&\parallel g(x)-g(x^{'})\parallel = \parallel(t_0(x)-t_0(x^{'}))f(v_0)\parallel+\cdots+\parallel(t_n(x)-t_n(x^{'}))f(v_n)\parallel\\
+&< \abs{t_0(x)-t_0(x^{'})}\parallel f(v_0)\parallel+\cdots +  \abs{t_n(x)-t_n(x^{'})}\parallel f(v_n)\parallel \\
+&< \abs{t_0(x)-t_0(x^{'})}s+\cdots +  \abs{t_n(x)-t_n(x^{'})}s\\
+&< \frac{\epsilon}{n+1}+\cdots + \frac{\epsilon}{n+1} = \epsilon
 \end{align*}
 \end{Dem}
 \begin{Defi}
-Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,...,v_n$ cumplen que los puntos $f(v_0),...,f(v_n)$ son vértices de un simplejo de $L$. Decimos que $f$ es un mapa de vértices y que su extensión dada por el teorema \ref{tms} es el mapa simplicial inducido por $f$ y lo denotaremos por $\abs{f}$.
+Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ son vértices de un simplejo de $L$. Decimos que $f$ es un mapa de vértices y que su extensión dada por el teorema \ref{tms} es el mapa simplicial inducido por $f$ y lo denotaremos por $\abs{f}$.
 \end{Defi}
 \begin{Teo}
-Suponga $f:K^{(0)}\rightarrow L^{(0)}$ es un mapa biyectivo tal que los vértices $v_0,...,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),...,f(v_n)$ generan un simplejo de $L$. Entonces el mapa simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo.
+Suponga $f:K^{(0)}\rightarrow L^{(0)}$ es un mapa biyectivo tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el mapa simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo.
 \end{Teo}
 \section{Complejos simpliciales abstractos}
 A continuación introduciremos la noción de complejo simplicial abstracto y su relación con un complejo simplicial.
@@ -239,7 +239,7 @@ El conjunto de vértices $V$ de un complejo simplicial abstracto $\mathcal{S}$ e
 \end{Defi}
 No haremos disticción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\mathcal{S}$.
 \begin{Defi}
-Dos complejos simpliciales abstractos $\mathcal{S}$ y $\mathcal{T}$ son isomorfos si existe una función biyectiva $f$ de $V(\mathcal{K})$ en $V(\mathcal{T})$ tal que $\{a_0,...,a_n\}$ está en $\mathcal{S}$ si y sólo si $\{f(a_0),...,f(a_n)\}$ está en $\mathcal{T}$.
+Dos complejos simpliciales abstractos $\mathcal{S}$ y $\mathcal{T}$ son isomorfos si existe una función biyectiva $f$ de $V(\mathcal{K})$ en $V(\mathcal{T})$ tal que $\{a_0,\ldots,a_n\}$ está en $\mathcal{S}$ si y sólo si $\{f(a_0),\ldots,f(a_n)\}$ está en $\mathcal{T}$.
 \end{Defi}
 El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales abstractos es el siguiente:
 \begin{Teo}\label{tpc} 
