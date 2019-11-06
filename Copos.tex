@@ -1,5 +1,5 @@
 \chapter{Complejos ordenados}
-Los complejos simpliciales y los conjuntos parcialmente ordendos están intrínsecamente relacionados ya que dado un complejo simplicial abstracto se puede construir un conjunto parcialmente ordenado a partir de ordenar los simplejos de $K$ por contención. Luego dado un conjunto parcialmente ordenado $P$ se puede construir un complejo simplicial tomando como simplejos las cadenas finitas de $P$. 
+Los complejos simpliciales y los conjuntos parcialmente ordenados están intrínsecamente relacionados ya que dado un complejo simplicial abstracto se puede construir un conjunto parcialmente ordenado a partir de ordenar los simplejos de $K$ por contención. Luego dado un conjunto parcialmente ordenado $P$ se puede construir un complejo simplicial tomando como simplejos las cadenas finitas de $P$. 
  
 \section{Complejo simplicial ordenado}
 \begin{Defi}[Complejo ordenado]
@@ -10,7 +10,7 @@ Sea $P$ un conjunto parcialmente ordenado, el complejo ordenado de $P$, denotado
 Sea $P$ un conjunto parcialmente ordenado, la realización geométrica de $P$ se define como la realización geométrica de $\Delta(P)$ y se denota por $\abs{P}$. 
 \end{Defi}
 
-Notemos que el conjunto de vértices de $\Delta(P)$ es precisaente $P$. No haremos distinción entre el punto $p$ en $P$ y el vértice que le corrresponde en $\abs{P}$.
+Notemos que el conjunto de vértices de $\Delta(P)$ es precisamente $P$. No haremos distinción entre el punto $p$ en $P$ y el vértice que le corresponde en $\abs{P}$.
 \begin{Teo}
 Sean $P$ y $Q$ conjuntos parcialmente ordenados y una función $f\colon P \rightarrow Q$ que preserva el orden, entonces $f$ es simplicial.
 \end{Teo}
@@ -20,11 +20,11 @@ Sean $p_1,...,p_n$ vértices de un simplejo en $\Delta(P)$, tales que $p_1\leqsl
 \end{Dem}
 
 \begin{Teo}
-Sea $P$ un conjunto parcialmente ordenado finito, estableciendo un orden parcial en $P\times\{0,1\}$ tal que $(p,b)\leq (p^{'},b^{'})$ si y sólo si $p\leq p^{'}$ y $b\leq b^{'}$ se tiene que $\abs{P\times\{0,1\}}$ es homeomorfo a $\abs{P}\times[0,1]$
+Sea $P$ un conjunto parcialmente ordenado finito, estableciendo un orden parcial en $P\times\{0,1\}$ tal que $(p,b)\leq (p^{'},b^{'})$ si y sólo si $p\leq p^{'}$ y $b\leq b^{'}$ se tiene que $\abs{P\times\{0,1\}}$ es homógrafo a $\abs{P}\times[0,1]$
 \end{Teo} 
 \begin{Dem}
 
-Consideremos las proyeccciones
+Consideremos las proyecciones
 \begin{align*}
 &\pi_1\colon P\times\{0,1\} \rightarrow P\\
 &\pi_2\colon P\times\{0,1\} \rightarrow \{0,1\}
@@ -52,9 +52,9 @@ Luego $f(z) = f(\hat{z})$ si y solo si $\phi_1(z)=\phi_1(\hat{z})$ y $\phi_2(z)=
 \phi_1(z) = \sum_{i=0}^{n}t_ip_i = \phi_1(\hat{z}) = \sum_{i=0}^{m}\hat{t_i}\hat{p_i}\\
 \phi_2(z) = \sum_{i=0}^{n}t_ib_1 = \phi_2(\hat{z}) = \sum_{i=0}^{m}\hat{t_i}\hat{b_i}
 \end{eqnarray}
-Como $t_i>0$ y $\hat{t_i}>0$ por unicidad de las coordenas baricéntricas $m=n$ y $t_i = \hat{t_i}$ para toda $i$, por lo tanto $z = \hat{z}$.
+Como $t_i>0$ y $\hat{t_i}>0$ por unicidad de las coordenadas baricéntricas $m=n$ y $t_i = \hat{t_i}$ para toda $i$, por lo tanto $z = \hat{z}$.
 
-Para verificar que $f$ es un homeomorfismo como $\abs{P\times\{0,1\}}$ es compacto y $\abs{P}\times[0,1]$ es Hausdorff basta probar que $f$ es sobreyectiva. 
+Para verificar que $f$ es un homeomorfismo como $\abs{P\times\{0,1\}}$ es compacto y $\abs{P}\times[0,1]$ es Hausdorff basta probar que $f$ es suprayectiva. 
 
 Sea $p$ en $\abs{P}$ y $b$ en [0,1], entonces podemos escribir a $p$ y $b$ como:
 \begin{eqnarray}
@@ -77,7 +77,7 @@ Luego
 \phi_2(z) = \sum_{i=0}^{k}t_i\cdot 0 + (s-\sum_{i=0}^{k})\cdot 0 +(\sum_{i=0}^{k+1}-s)\cdot 1 + \sum_{i = k+2}^{n}\cdot 1 = \sum_{i=0}^{n}t_i -1 = 1-s = b
 \end{eqnarray*}
 
-Por lo tanto $f(z)=(p,b)$ y $f$ es sobreyectiva.
+Por lo tanto $f(z)=(p,b)$ y $f$ es suprayectiva.
 \end{Dem}
 
 \begin{Teo}
@@ -100,7 +100,7 @@ Si $i=j$ como $f(x)\leq f(y)$ y $g(x)\leq g(y)$ se tiene que $H(x,i)\leq H(y,j)$
 Si $i<j$, entonces $i = 0$ y $j = 1$, por lo que
 $H(x,i) = f(x)\leq f(y)\leq g(y) = H(y,j)$
 
-Por lo tanto $H(x,i)$ es un mapeo de conjuntos parcialemte ordenados por lo que puede ser extendida a una función continua $\abs{H}:\abs{P\times \{ 0,1\}} \longrightarrow \abs{Q}$ tal que si
+Por lo tanto $H(x,i)$ es un mapeo de conjuntos parcialmente ordenados por lo que puede ser extendida a una función continua $\abs{H}:\abs{P\times \{ 0,1\}} \longrightarrow \abs{Q}$ tal que si
 \[
 (x,r) =\sum_{i=1}^{n}t_{i}(p_{i},b{i}) \Longrightarrow \abs{H}((x,r))= \sum_{i=1}^{n}t_{i}H((p_{i},b{i}))
 \]
@@ -131,7 +131,7 @@ Sea $P$ un conjunto parcialmente ordenado y $x$ en $P$. Definimos $P_{\leqslant 
 \end{Defi}
 
 \begin{Col}
-Sea $P$ un conjunto parcialmente ordenado fintito. Entonces $P_{\leqslant x}$ y $P_{\geqslant x}$ son contraíbles.
+Sea $P$ un conjunto parcialmente ordenado finito. Entonces $P_{\leqslant x}$ y $P_{\geqslant x}$ son contraíbles.
 \end{Col}
 
 \begin{Teo}
