@@ -1,9 +1,9 @@
-\chapter{Complejos ordenados}
+\chapter{Complejos de orden}
 Los complejos simpliciales y los conjuntos parcialmente ordenados están intrínsecamente relacionados ya que dado un complejo simplicial abstracto se puede construir un conjunto parcialmente ordenado a partir de ordenar los simplejos de $K$ por contención. Luego dado un conjunto parcialmente ordenado $P$ se puede construir un complejo simplicial tomando como simplejos las cadenas finitas de $P$. 
  
-\section{Complejo simplicial ordenado}
-\begin{Defi}[Complejo ordenado]
-Sea $P$ un conjunto parcialmente ordenado, el complejo ordenado de $P$, denotado por $\Delta(P)$, es el complejo simplicial formado por las cadenas finitas no vacías en $P$.
+\section{Complejo de orden}
+\begin{Defi}[Complejo de orden]
+Sea $P$ un conjunto parcialmente ordenado. El complejo de orden de $P$, denotado por $\Delta(P)$, es el complejo simplicial formado por las cadenas no vacías en $P$.
 \end{Defi}
 
 \begin{Defi}
@@ -12,7 +12,9 @@ Sea $P$ un conjunto parcialmente ordenado, la realización geométrica de $P$ se
 
 Notemos que el conjunto de vértices de $\Delta(P)$ es precisamente $P$. No haremos distinción entre el punto $p$ en $P$ y el vértice que le corresponde en $\abs{P}$.
 \begin{Teo}
-Sean $P$ y $Q$ conjuntos parcialmente ordenados y una función $f\colon P \rightarrow Q$ que preserva el orden, entonces $f$ es simplicial.
+Sean $P$ y $Q$ conjuntos parcialmente ordenados y una función $f\colon
+P \rightarrow Q$ que preserva el orden. Entonces se induce una
+funcion simplicial $\Delta(f)\colon \Delta(P)\to\Delta(Q)$.
 \end{Teo}
 \begin{Dem}
 
