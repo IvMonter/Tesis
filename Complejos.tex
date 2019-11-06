@@ -1,8 +1,37 @@
 \chapter{Complejos simpliciales}
-El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir del complejo simplicial abstracto de completas de $G$, es por ello que en este capítulo introduciremos la definición de complejo simplicial y complejo simplicial abstracto.
-\section{Complejos simpliciales en $\mathbb{R}^N$}
-\subsection{Simplejos}  
-El primer paso para definir un complejo simplicial, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
+El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir del complejo simplicial de completas de $G$, al cual se le asocia un complejo geométrico que está equipado con una topología. En este capítulo estudiaremos los complejos y la construcción de la realización geométrica de una gráfica.
+
+\begin{Defi}[Complejo simplicial]
+Un complejo simplicial es una colección $\Delta$ de conjuntos finitos no vacíos tales que si $\sigma$ está en $\Delta$, todo subconjunto no vacío de $\sigma$ también lo está. Un elemento $\sigma$ de $\Delta$ es llamado un simplejo o cara de $\Delta$. 
+\end{Defi}
+
+\begin{Defi}
+Sea $\Delta$ un complejo simplicial, $\sigma$ y $\tau$ simplejos de $\Delta$. Definimos los siguientes conceptos:
+\begin{enumerate}
+\item El conjunto de vértices $V$ de un complejo simplicial $\Delta$ es la unión de sus elementos unipuntuales.
+\item Si $\sigma$ contine $n + 1$ vértices es llamado un $n$-simplejo. La dimensión de $\sigma$ es $n$.
+\item Si $\tau\subset\sigma$ decimos que $\tau$ es una cara de $\sigma$. Si la contención es estricta decimos que $\tau$ es una cara propia de $\sigma$.
+\item La dimensión de $\Delta$ denotada por dim $\Delta$ se define como -1 si $\Delta$ es vacío, $n$ si $\Delta$ tiene un $n$-simplejo, pero no un $(n+1)$-simplejo, o $\infty$ si $\Delta$ contiene un $n$-simplejo para toda $n\geqslant 0$.
+\end{enumerate}
+\end{Defi}
+No haremos disticción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\Delta$.
+\begin{Defi}
+Una función $f\colon V(\Delta_1)\rightarrow V(\Delta_2)$ es simplicial si para todo simplejo $\sigma$ de $\Delta_1$ se tiene que $f(\sigma)$ es un simplejo en $\Delta_2$.
+\end{Defi}
+\begin{Defi}
+Dos complejos simpliciales $\Delta_1$ y $\Delta_2$ son isomorfos si existe una función biyectiva $f$ de $V(\Delta_1)$ en $V(\Delta_2)$ tal que $f$ es simplicial.
+\end{Defi}
+
+\begin{Defi}
+Sea $\Delta$ un complejo simplicial, definimos el $p$-esqueleto de $\Delta$ como el complejo simplicial que consiste de todos los simplejos de $\Delta$ de dimensión menor o igual a $p$ y lo denotamos por $\Delta^(p)$.
+\end{Defi}
+%\begin{Ejem}
+%Dada una gráfica $G$, denotemos por $\Delta(G)$ la colección de completas de $G$. Es fácil ver que si $c$ es una completa de $G$ entonces cualquier subconjunto no vacío $s$ de $c$ es una completa. Ya que si $x$ y $y$ pertenecen a $s$ entonces $x$ y $y$ pertenecen a $c$ y por lo tanto son adyacentes. En consecuencia $\Delta(G)$ es un complejo simplicial. La dim $\Delta(G)$ es igual al máximo de el conjunto de ordenes de las completas de $G$  y los vértices de $\Delta(G)$ son los vértices de $G$ 
+%\end{Ejem}
+
+\section{Complejos simpliciales geométricos}
+\subsection{Simplejos en $\mathbb{R}^N$}  
+El primer paso para definir un complejo simplicial geometrico, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
 \begin{Defi}[Independencia geométrica]
 Dado un conjunto finito $\{a_0,\ldots,a_n\}$ de puntos en $\mathbb{R}^{N}$, el conjunto es geométricamente independiente si la única solución al sistema 
 \begin{equation}\label{s1}
@@ -52,7 +81,7 @@ Ejemplos:
 \end{enumerate}
 
 \begin{Defi}[Simplejo]
-Sea $\{a_0,\cdots,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el simplejo  $n-\sigma$ generado por $a_0,\cdots,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
+Sea $\{a_0,\cdots,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el $n$- simplejo  $\sigma$ generado por $a_0,\cdots,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
 \begin{equation}\label{s2}
 \begin{split}
 x = \sum_{i=0}^{n}t_ia_i,\\
@@ -133,19 +162,19 @@ Para un simplex $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}
 \end{Prop}
 
 \subsection{Complejos en $\mathbb{R}^N$}
-\begin{Defi}[Complejo simplicial]
-Un complejo simplicial $\textit{K}$ en $\mathbb{R}^N$  es una colección de simplejos en $\mathbb{R}^N$ tal que:
+\begin{Defi}[Complejo simplicial geométrico]
+Un complejo simplicial geométrico $\textit{K}$ en $\mathbb{R}^N$  es una colección de simplejos en $\mathbb{R}^N$ tal que:
 \begin{enumerate}
 \item Toda cara de un simplejo de $\textit{K}$ está en $\textit{K}$.
 \item La intersección de cualesquiera dos simplejos en $\textit{K}$ es una cara de cada uno de ellos.
 \end{enumerate} 
 \end{Defi}
 \begin{Defi}
-Sean $\textit{K}$ y $\textit{L}$ complejos simpliciales, tales que $\textit{L}$ está contenido en $\textit{K}$, decimos entonces que $\textit{L}$ es un subcomplejo de $\textit{K}$. 
+Sean $\textit{K}$ y $\textit{L}$ complejos simpliciales geométricos, tales que $\textit{L}$ está contenido en $\textit{K}$, decimos entonces que $\textit{L}$ es un subcomplejo de $\textit{K}$. 
 \end{Defi}
 
 \begin{Prop}
-Si $\textit{L}$ es una subcolección de un complejo simplcial $\textit{K}$, tal que contiene todas las caras de sus elementos, entonces $\textit{L}$ es un subcomplejo de $\textit{K}$.
+Si $\textit{L}$ es una subcolección de un complejo simplicial geométrico $\textit{K}$, tal que contiene todas las caras de sus elementos, entonces $\textit{L}$ es un subcomplejo de $\textit{K}$.
 \end{Prop}
 
 \begin{Defi}
@@ -181,7 +210,7 @@ bsbjsdjhsjd
 \end{Ejem}
 Como ya vimos las dos topologías son diferentes en general, pero si $K$ es finito no es difícil probar que las dos topologías son la misma, como veremos a continuación.
 \begin{Prop}
-Sea K un complejo simplicial finito. Entonces la topología subyacente y la topología usual en $\abs{K}$ son la misma.
+Sea K un complejo simplicial geométrico finito. Entonces la topología subyacente y la topología usual en $\abs{K}$ son la misma.
 \end{Prop}
 \begin{Dem}
 
@@ -189,12 +218,13 @@ Primero notemos que $\abs{K}$ es la unión finita de cerrados en $\mathbb{R}^N$ 
 Supongamos $C$ cerrado en $\abs{K}$, entonces $C\cap\sigma$ es cerrado en $\sigma$ para toda $\sigma$ y como $\sigma$ es cerrado en $\mathbb{R}^N$, $C\cap\sigma$ también lo es. Luego podemos escribir a $C$ como la unión finita de cerrados en  $\mathbb{R}^N$ de la siguiente forma $C=\cup_{\sigma\in K}C\cap\sigma$, de donde se sigue que $C$ es cerrado en $\mathbb{R^N}$.
 \end{Dem}
 \begin{Defi}[Esquema de vértices]
-Sea $K$ un complejo simplicial, sea $V$ el conjunto de vértices de $K$ y $\mathcal{R}$ la colección de todos los subconjuntos de $V$ tales que generan un simplejo de K. La colección $\mathcal{R}$ es llamadada el esquema de vértices de $K$.
+Sea $K$ un complejo simplicial geométrico, sea $V$ el conjunto de vértices de $K$ y $\mathcal{R}$ la colección de todos los subconjuntos de $V$ tales que generan un simplejo de K. El complejo simplicial $\mathcal{R}$ es llamado el esquema de vértices de $K$.
 \end{Defi}
-\subsection{Mapas simpliciales}
+
+\subsection{Morfismos simpliciales}
 \begin{Teo} \label{tms}
-Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow \abs{L}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ pertenecen a un simplejo de $L$.
-Entonces $f$ puede extenderse a un mapa continuo $g:\abs{K}  \rightarrow \abs{L}$ tal que:
+Sean $L$ y $K$ complejos simpliciales geométricos y sea $f\colon K^{(0)} \rightarrow \abs{L}$ una función. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ pertenecen a un simplejo de $L$.
+Entonces $f$ puede extenderse a una función continua $g:\abs{K}  \rightarrow \abs{L}$ tal que:
 \begin{equation*}
 g(x)= \sum_{i=0}^{n}t_i(x)f(v_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)v_i
 \end{equation*}
@@ -217,44 +247,47 @@ Sea $\delta = \min\{\delta_0,\ldots,\delta_n\}$ y $s = \parallel f(v_0)\parallel
 \end{align*}
 \end{Dem}
 \begin{Defi}
-Sean $L$ y $K$ complejos simpliciales y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ un mapa. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ son vértices de un simplejo de $L$. Decimos que $f$ es un mapa de vértices y que su extensión dada por el teorema \ref{tms} es el mapa simplicial inducido por $f$ y lo denotaremos por $\abs{f}$.
+Sean $L$ y $K$ complejos simpliciales geométricos y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ una función. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ son vértices de un simplejo de $L$. Decimos que la extensión de $f$ dada por el teorema \ref{tms} es el morfismo simplicial lineal inducido por $f$ y lo denotaremos por $\abs{f}$.
 \end{Defi}
 \begin{Teo}
-Suponga $f:K^{(0)}\rightarrow L^{(0)}$ es un mapa biyectivo tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el mapa simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo.
+Suponga $f:K^{(0)}\rightarrow L^{(0)}$ una función biyectiva tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el morfismo simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo. Decimos que $\abs{f}$ es un homeomorfismo simplicial.
 \end{Teo}
-\section{Complejos simpliciales abstractos}
-A continuación introduciremos la noción de complejo simplicial abstracto y su relación con un complejo simplicial.
-\begin{Defi}[Complejo simplicial abstracto]
-Un complejo simplicial abstracto es una colección $\mathcal{S}$ de conjuntos no vacíos tales que si $A$ está en $\mathcal{S}$, todo subconjunto no vacío de $A$ también lo está. Un elemento $\textit{A}$ de $\mathcal{S}$ es llamado un simplejo de $\mathcal{S}$. 
-\end{Defi}
-\begin{Ejem}
-El esquema de vértices de un complejo simplicial es un complejo simplicial abstracto.
-\end{Ejem}
-\begin{Ejem}
-Dada una gráfica $G$, denotemos por $\Delta(G)$ la colección de completas de $G$. Es fácil ver que si $c$ es una completa de $G$ entonces cualquier subconjunto no vacío $s$ de $c$ es una completa. Ya que si $x$ y $y$ pertenecen a $s$ entonces $x$ y $y$ pertenecen a $c$ y por lo tanto son adyacentes. En consecuencia $\Delta(G)$ es un complejo simplicial abstracto.
-\end{Ejem}
-Análogamente a un complejo simplicial, podemos definir la dimensión, el conjunto de vértices y simplejos de un complejo simplicial abstracto.
 \begin{Defi}
-El conjunto de vértices $V$ de un complejo simplicial abstracto $\mathcal{S}$ es la unión de sus elementos unipuntuales.
+Dos complejos simpliciales geométricos $L$ y $K$ son linealmente isomorfos si existe un homeomorfismo lineal de $K$ en $L$.
 \end{Defi}
-No haremos disticción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\mathcal{S}$.
-\begin{Defi}
-Dos complejos simpliciales abstractos $\mathcal{S}$ y $\mathcal{T}$ son isomorfos si existe una función biyectiva $f$ de $V(\mathcal{K})$ en $V(\mathcal{T})$ tal que $\{a_0,\ldots,a_n\}$ está en $\mathcal{S}$ si y sólo si $\{f(a_0),\ldots,f(a_n)\}$ está en $\mathcal{T}$.
-\end{Defi}
-El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales abstractos es el siguiente:
+El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales geométricos es el siguiente:
 \begin{Teo}\label{tpc} 
 ~\begin{enumerate}
-\item Todo complejo simplicial abstracto $\mathcal{S}$ es isomorfo al esquema de vértices de algún complejo simplicial $K$.
-\item Dos complejos simpliciales son linealmente isomorfos si y sólo si sus esquemas de vértices son isomorfos como complejos simpliciales abstractos.
+\item Todo complejo simplicial $\mathcal{\Delta}$ es isomorfo al esquema de vértices de algún complejo simplicial geométrico $K$.
+\item Dos complejos simpliciales geométricos son linealmente isomorfos si y sólo si sus esquemas de vértices son isomorfos como complejos simpliciales.
 \end{enumerate}
 \end{Teo}
 
 \section{Realización geométrica}
 \begin{Defi}
-Sea $\mathcal{S}$ un complejo simplicial abstracto y $K$ un complejo simplicial tal que el esquema de vértices de $K$ es isomorfo a $\mathcal{S}$, decimos que $K$ es una realización geométrica de $\mathcal{S}$.
+Sea $\Delta$ un complejo simplicial y $K$ un complejo simplicial geométrico tal que el esquema de vértices de $K$ es isomorfo a $\Delta$, decimos que $\abs{K}$ es una realización geométrica de $\Delta$ y la denotamos por $\abs{\Delta}$.
 \end{Defi}
-Notemos que para un complejo simplicial abstracto $\mathcal{S}$ pueden existir una infinidad de realizaciones geométricas, sin embargo si $K$ y $K^{'}$ son realizaciones geométricas de $\mathcal{S}$ entonces sus esquemas de vértices son isomorfos y por el teorema \ref{tpc} $K$ y $K^{'}$ son homeomorfos. De modo que la realización geométrica es única salvo homeomorfismo.
+Notemos que para un complejo simplicial $\Delta$ pueden existir una infinidad de realizaciones geométricas, sin embargo si $K$ y $K^{'}$ son tales que sus esquemas de vértices son isomorfos a $\Delta$, por el teorema \ref{tpc} $K$ y $K^{'}$ son linealmente isomorfos. De modo que la realización geométrica es única salvo homeomorfismo simplicial.
 
-Como $\mathcal{S}$ y el esquema de vértices de $K$ son isomorfos existe un mapa de vértices $f\colon V(\mathcal{S})\rightarrow V(K)$ que mapea a cada vértice $v$ de $V(\mathcal{S})$ en un punto $f(v)$ en $\mathbb{R}^N$ que es vértice de $V(K)$. Para fines prácticos no haremos distinción entre $v$ y $f(v)$.
+Como $\Delta$ y el esquema de vértices de $K$ son isomorfos existe una función simplicial biyevtiva $f\colon V(\Delta)\rightarrow V(K)$ que mapea a cada vértice $v$ de $\Delta$ en un punto $f(v)$ en $\mathbb{R}^N$ que es un vértice de $K$. Para fines prácticos no haremos distinción entre $v$ y $f(v)$.
 
+\section{Soportes contraíbles}
+\begin{Defi}
+Suponga $\Delta$ un complejo simplicial y $X$ un espacio. Una función $C$ la cual envía simplejos de $\Delta$ a subespacios de $X$ es un soporte contraíble si:
+\begin{itemize}
+\item Para todo simplejo $\sigma$ de $\Delta$, $C(\sigma)$ es contraíble.
+\item Si $\tau$ es una cara de $\sigma$, entonces $C(\tau)\subset C(\sigma)$
+\end{itemize}
+\end{Defi}
 
+\begin{Teo}
+Si $C$ es un soporte contraíble de un complejo simplicial finito $\Delta$ a un espacio $X$, entonces
+\begin{itemize}
+\item Existe una función continua $g\colon \abs{Delta}\rightarrow X$ soportada por $C$.
+\item Cualesquiera dos funciones continuas soportadas por $C$ son homotópicas.
+\end{itemize}
+\end{Teo}
+\begin{Dem}
+
+Por inducción ....
+\end{Dem}

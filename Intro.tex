@@ -57,3 +57,29 @@ Dos espacios topológicos son equivalentes homotópicamente si existen mapas con
 \begin{Defi}
 Un espacio $X$ es contraíble si es homotópicamente equivalente a un punto.
 \end{Defi}
+\begin{Teo}
+Sea $X$ un espacio contraíble y $f$ una función de $S^n$ en $X$. Entonces f puede extenderse a una función de $D^{n+1}$ en X.
+\end{Teo}
+ 
+\begin{Dem}
+Como $X$ es contraíble, existe $H\colon X\times I \rightarrow X$ tal que:
+\begin{eqnarray}
+H(x,0)=x \\
+H(x,1) = x_0
+\end{eqnarray}
+para toda x en X.
+
+Definamos $G\colon S^n\times I \rightarrow X$ como:
+\begin{equation}
+G(u,t) = H(f(u),t)
+\end{equation}
+En $S^n\times I$ definimos una relación por $(u,1)\sim(u^{'},1)$ para toda $u$, $u^{'}$ en $S^n$
+Ahora veamos que los elementos de la clase de equivalencia de $(u,0)$ bajo $G$ son enviados al mismo elemento en $X$.
+
+Si $u$, $u^{'}$ pertenecen a $S^n$ se tiene que
+\begin{eqnarray}
+G(u,1) = H(f(u),1) = x_0\\
+G(u^{'},1)=H(f(u^{'},1) = x_0
+\end{eqnarray}
+Por lo tanto existe $\bar{G}$ continua de $S^n\times I /{\sim}$ en $X$.
+\end{Dem}
