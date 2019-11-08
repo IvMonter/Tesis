@@ -7,10 +7,10 @@ El propósito de este capítulo es reconstruir la demostración desde el inicio,
 \section{Gráficas Helly}
 Las gráficas que nos interesan en este capítulo son las gráficas que cumplen la propiedad de ser clan-Helly, en está sección las estudiaremos más a detalle, a continuación se enuncia su definición.
 \begin{Defi}[Gráficas clan-Helly]
-Una gráfica G es clan-Helly si su colección de clanes $\mathcal{C}(G)$ cumple que cualquier subcolección de $\mathcal{C}(G)$ con la propiedad de que cualesquiera dos clanes tienen intersección no vacía, tiene intersección no vacia.  
+Una gráfica G es clan-Helly si su colección de clanes $\mathcal{C}(G)$ cumple que cualquier subcolección de $\mathcal{C}(G)$ con la propiedad de que cualesquiera dos clanes tienen intersección no vacía, tiene intersección no vacía.  
 \end{Defi}
 
-Para estudiar estas gráficas, una herramienta útil es centrarnos en su contraparte, preguntandonos que debe pasar para que una gráfica no sea clan-Helly. Así de la definición se sigue que la gráfica que buscamos debe tener al menos tres clanes $\{q_1,q_2,q_3\}$ que se intersequen dos a dos y tengan interseccción vacía.
+Para estudiar estas gráficas, una herramienta útil es centrarnos en su contraparte, preguntándonos que debe pasar para que una gráfica no sea clan-Helly. Así de la definición se sigue que la gráfica que buscamos debe tener al menos tres clanes $\{q_1,q_2,q_3\}$ que se intersequen dos a dos y tengan intersección vacía.
 
 
 \begin{center}
@@ -33,7 +33,7 @@ Para estudiar estas gráficas, una herramienta útil es centrarnos en su contrap
 \draw  [dashed](-1.5,-1) -- (0,1);
 \end{tikzpicture}
 \end{center}
-Notemos que los vértices $v_{12}$, $v_{13}$ y $v_{23}$ forman una completa, por lo que los clanes $q_1$, $q_2$ y $q_3$ deben tener al menos tres vértices cada uno. La manera más sencilla, tenendo el menor número de aristas y vértices sería que los clanes $q_1$, $q_2$ y $q_3$ tuvieran exactamente tres vértices cada uno, así la completa $\{v_{12}, v_{13}, v_{23}\}$ sería también un clan, teniendo en total cuatro clanes, seis vértices y nueve aristas.
+Notemos que los vértices $v_{12}$, $v_{13}$ y $v_{23}$ forman una completa, por lo que los clanes $q_1$, $q_2$ y $q_3$ deben tener al menos tres vértices cada uno. La manera más sencilla, teniendo el menor número de aristas y vértices sería que los clanes $q_1$, $q_2$ y $q_3$ tuvieran exactamente tres vértices cada uno, así la completa $\{v_{12}, v_{13}, v_{23}\}$ sería también un clan, teniendo en total cuatro clanes, seis vértices y nueve aristas.
 \begin{figure}[H]\label{pequenh}
 \centering
 \begin{tikzpicture}
@@ -113,9 +113,9 @@ Luego si $\sigma_i = \{b_{i0},...,b_{ir_i}\}$ para $i = 1,...,n$, podemos defini
 f(\sigma_{i})= b_{\sigma_{i}}
 \end{equation*}
 Donde $b_{\sigma_{i}}$ es el baricentro de $\sigma_{i}$ definido como $b_{\sigma_i} = \frac{1}{r_i+1}b_{i0}+\cdots+\frac{1}{r_i+1}b_{ir}$.
-Como $\sigma_{i}$ es un conjunto convexo, se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{i}$, además como $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ se tiene que $b_{\sigma_{i}}$ pertecene a $\sigma_{n}$.
+Como $\sigma_{i}$ es un conjunto convexo, se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{i}$, además como $\sigma_0\subset \sigma_1\subset...\subset\sigma_n$ se tiene que $b_{\sigma_{i}}$ pertenece a $\sigma_{n}$.
 
-Así $f$ cumple que los puntos $f(\sigma_0),\ldots,f(\sigma_n)$ pertenen al simplejo $\sigma_{n}$ y por el teorema \ref{tms} puede extenderse a un mapeo continuo $g\colon \abs{\sd\Delta}\rightarrow\abs{\Delta}$ tal que:
+Así $f$ cumple que los puntos $f(\sigma_0),\ldots,f(\sigma_n)$ pertenecen al simplejo $\sigma_{n}$ y por el teorema \ref{tms} puede extenderse a un mapeo continuo $g\colon \abs{\sd\Delta}\rightarrow\abs{\Delta}$ tal que:
 
 \begin{equation*}
 g(x)= \sum_{i=0}^{n}t_i(x)f(\sigma_i), \textrm{ donde }  x= \sum_{i=0}^{n}t_i(x)\sigma_i
@@ -139,9 +139,9 @@ Luego
 El nervio de una familia de subconjuntos ${\{A_i\}}_{i\in I}$, denotado por $\mathcal{N}(A_i)$, es el complejo simplicial abstracto definido sobre los vértices $I$ tal que un subconjunto finito $\sigma \subseteq I$ está en $\mathcal{N}(A_i)$ si y sólo si ${\cup}_{i\in \sigma}A_i \neq \emptyset$
 \end{Defi}
 \begin{Ejem}
-Sea G una gráfica, consideremos la colección de clanes de G, $\mathcal{C}(G) = \{q_1,...,q_n\}$, indizada por $I =\{1,...,n\}$, esta notación nos permite definir el nervio de la colleción de clanes $\mathcal{N}(q_i)$. Notemos que $\sigma = \{i_1,...,i_r\}$ pertenece a $\mathcal{N}(q_i)$ si y solo si $\cup_{k=1}^{r}q_{i_k}\neq\emptyset$, lo que implica que $\{q_{i_1},...,q_{i_r}\}$ es una completa de K(G), de donde se sigue que $\{q_{i_1},...,q_{i_r}\}$ pertenece a $\Delta(K(G))$.
+Sea G una gráfica, consideremos la colección de clanes de G, $\mathcal{C}(G) = \{q_1,...,q_n\}$, indizada por $I =\{1,...,n\}$, esta notación nos permite definir el nervio de la colección de clanes $\mathcal{N}(q_i)$. Notemos que $\sigma = \{i_1,...,i_r\}$ pertenece a $\mathcal{N}(q_i)$ si y solo si $\cup_{k=1}^{r}q_{i_k}\neq\emptyset$, lo que implica que $\{q_{i_1},...,q_{i_r}\}$ es una completa de K(G), de donde se sigue que $\{q_{i_1},...,q_{i_r}\}$ pertenece a $\Delta(K(G))$.
 
-Por lo tanto $\mathcal{N}(q_i)$ es isomorfo a un subcomplex de $\Delta(K(G))$, por simplicidad denotaremos a $\mathcal{N}(q_i)$ como $\mathcal{N}(G)$ y diremos que $\mathcal{N}(G)\subseteq \Delta(K(G))$.
+Por lo tanto $\mathcal{N}(q_i)$ es isomorfo a un subcomplejo de $\Delta(K(G))$, por simplicidad denotaremos a $\mathcal{N}(q_i)$ como $\mathcal{N}(G)$ y diremos que $\mathcal{N}(G)\subseteq \Delta(K(G))$.
 \end{Ejem}
 
 % Local Variables:

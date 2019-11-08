@@ -9,12 +9,12 @@ Un complejo simplicial es una colección $\Delta$ de conjuntos finitos no vacío
 Sea $\Delta$ un complejo simplicial, $\sigma$ y $\tau$ simplejos de $\Delta$. Definimos los siguientes conceptos:
 \begin{enumerate}
 \item El conjunto de vértices $V$ de un complejo simplicial $\Delta$ es la unión de sus elementos unipuntuales.
-\item Si $\sigma$ contine $n + 1$ vértices es llamado un $n$-simplejo. La dimensión de $\sigma$ es $n$.
+\item Si $\sigma$ contiene $n + 1$ vértices es llamado un $n$-simplejo. La dimensión de $\sigma$ es $n$.
 \item Si $\tau\subset\sigma$ decimos que $\tau$ es una cara de $\sigma$. Si la contención es estricta decimos que $\tau$ es una cara propia de $\sigma$.
 \item La dimensión de $\Delta$ denotada por dim $\Delta$ se define como -1 si $\Delta$ es vacío, $n$ si $\Delta$ tiene un $n$-simplejo, pero no un $(n+1)$-simplejo, o $\infty$ si $\Delta$ contiene un $n$-simplejo para toda $n\geqslant 0$.
 \end{enumerate}
 \end{Defi}
-No haremos disticción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\Delta$.
+No haremos distinción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\Delta$.
 \begin{Defi}
 Una función $f\colon V(\Delta_1)\rightarrow V(\Delta_2)$ es simplicial si para todo simplejo $\sigma$ de $\Delta_1$ se tiene que $f(\sigma)$ es un simplejo en $\Delta_2$.
 \end{Defi}
@@ -31,7 +31,7 @@ Sea $\Delta$ un complejo simplicial, definimos el $p$-esqueleto de $\Delta$ como
 
 \section{Complejos simpliciales geométricos}
 \subsection{Simplejos en $\mathbb{R}^N$}  
-El primer paso para definir un complejo simplicial geometrico, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
+El primer paso para definir un complejo simplicial geométrico, es estudiar las estructuras geométricas que lo conforman, es por ello que la primera parte de esta sección está dedicada a analizar los simplejos en $\mathbb{R}^N$.           
 \begin{Defi}[Independencia geométrica]
 Dado un conjunto finito $\{a_0,\ldots,a_n\}$ de puntos en $\mathbb{R}^{N}$, el conjunto es geométricamente independiente si la única solución al sistema 
 \begin{equation}\label{s1}
@@ -129,7 +129,7 @@ $t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue 
 \begin{equation}
  x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $\{a_1-a_0,\ldots,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,\ldots,a_n-a_0,b_{n+1},\ldots,b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,\ldots,n$ y $T(b_i) = 0$ para todo $i = n+1,\ldots,N$, tenemos que $T(x-x_0) = (t_1(x),\ldots,t_n(x),0,\ldots,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordenadas de $x-a_0$ en la base $\{a_1-a_0,\ldots,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,\ldots,a_n-a_0,b_{n+1},\ldots,b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,\ldots,n$ y $T(b_i) = 0$ para todo $i = n+1,\ldots,N$, tenemos que $T(x-x_0) = (t_1(x),\ldots,t_n(x),0,\ldots,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
 %Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),\ldots,t_n(x),0,\ldots,0)$.
 %\begin{Prop}
@@ -144,7 +144,7 @@ El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ 
 %\end{equation}
 %El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,\ldots,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
 %\end{Dem}
-Otras definiciones importantes sobre simplejos se enuncian a continuacion:
+Otras definiciones importantes sobre simplejos se enuncian a continuación:
 \begin{Defi}[Caras de un simplejo]
 Sea $\sigma$ el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,\ldots,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
 \end{Defi}
@@ -152,12 +152,12 @@ Sea $\sigma$ el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$ un simplejo 
 Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de todas sus caras propias y se denota por $Bd\sigma$. El interior de $\sigma$ se define como int $\sigma = \sigma-Bd\sigma$. 
 \end{Defi}
 \begin{Prop}
-Para un simplex $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
+Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
 \begin{enumerate}[(a)]
-\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplex $S$ generado por $a_1,\ldots,a_n$.
+\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
 \item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
-\item Dado un simplex $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
-\item Existe un homeomorfismo f de $\sigma$ en la bola unitaria $B^n$, tal que $Bd\sigma$ es mapeada a $B^n$, es decir $f(Bd\sigma) = S^{n-1}$.
+\item Dado un simplejo $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
+\item Existe un homeomorfismo f de $\sigma$ en la bola unitaria $B^n$, tal que $Bd\sigma$ es mapeada a $S^n$, es decir $f(Bd\sigma) = S^{n-1}$.
 \end{enumerate}
 \end{Prop}
 
@@ -188,13 +188,13 @@ Sea $\abs{\textit{K}}$ la unión de los simplejos de $\textit{K}$, si asociamos 
 \begin{Dem}
 
 Primero veamos que la intersección  arbitraria de cerrados es cerrada. Supongamos que para toda simplejo $\sigma$, $C_{\alpha}$ cumple que $\sigma\cap C_{\alpha}$ es cerrado en $\sigma$, para toda $\alpha$ en $I\subset \mathbb{R}$.
-Sea $C = \cap_{\alpha \in I}C_{\alpha}$, entonces $C\cap\sigma = \cap_{\alpha\in I}(C_{\alpha}\cap\alpha)$, como cada $C_{\alpha}\cap \sigma$ es cerrado en $\sigma$, su intensección tambien lo es.
+Sea $C = \cap_{\alpha \in I}C_{\alpha}$, entonces $C\cap\sigma = \cap_{\alpha\in I}(C_{\alpha}\cap\alpha)$, como cada $C_{\alpha}\cap \sigma$ es cerrado en $\sigma$, su intersección también lo es.
 
 Ahora veamos que la unión finita de de cerrados es cerrada. Sean $C_1,\ldots,C_n$ cerrados en $\abs{K}$, entonces para todo $\sigma$ en $K$ tenemos que $C_i \cap \sigma$ es cerrado en $\sigma$ para toda $i =1,\ldots,n$ y como la unión finita de cerrados en $\sigma$ es cerrada tenemos que $\cup C_i\cap\sigma = (\cup C_i)\cap\sigma$ es cerrado en $\sigma$.
 \end{Dem}
 El espacio $\abs{K}$ es llamado el \textbf{espacio subyacente} de $K$ o el \textbf{politopo} de $K$.
 
-El siguiente teorema nos permite caracteterizar las funciones continuas de $\abs{K}$ en algún espacio topológico.
+El siguiente teorema nos permite caracterizar las funciones continuas de $\abs{K}$ en algún espacio topológico.
 \begin{Teo}\label{ttc}
 Un mapa $f\colon \abs{K}\rightarrow X$ es continuo si y sólo si $f|_{\sigma}$ es continua para cada $\sigma$ en $K$
 \end{Teo}
@@ -204,7 +204,7 @@ $\abs{K}$ es Hausdorff
 \begin{Teo}
 Si K es finito entonces $\abs{K}$ es compacto.
 \end{Teo}
-Un ejercicio interesante es comparar la topología definida en $\abs{K}$, con la topología usual como subespacio de $R^{N}$. Notemos que si $B$ es cerrado en $\abs{K}$ con la topología usual, para todo $\sigma$ en $K$, tenemos que $B\cap\sigma$ es cerrado en $\sigma$ y por lo tanto $B$ es cerrado en $\abs{K}$. Por lo tanto la topología usual está contenida en la topología subyacente. Para ver que en general no se da la doble contención consideremoss el siguiente ejemplo.
+Un ejercicio interesante es comparar la topología definida en $\abs{K}$, con la topología usual como subespacio de $R^{N}$. Notemos que si $B$ es cerrado en $\abs{K}$ con la topología usual, para todo $\sigma$ en $K$, tenemos que $B\cap\sigma$ es cerrado en $\sigma$ y por lo tanto $B$ es cerrado en $\abs{K}$. Por lo tanto la topología usual está contenida en la topología subyacente. Para ver que en general no se da la doble contención consideremos el siguiente ejemplo.
 \begin{Ejem}
 bsbjsdjhsjd
 \end{Ejem}
@@ -269,21 +269,21 @@ Sea $\Delta$ un complejo simplicial y $K$ un complejo simplicial geométrico tal
 \end{Defi}
 Notemos que para un complejo simplicial $\Delta$ pueden existir una infinidad de realizaciones geométricas, sin embargo si $K$ y $K^{'}$ son tales que sus esquemas de vértices son isomorfos a $\Delta$, por el teorema \ref{tpc} $K$ y $K^{'}$ son linealmente isomorfos. De modo que la realización geométrica es única salvo homeomorfismo simplicial.
 
-Como $\Delta$ y el esquema de vértices de $K$ son isomorfos existe una función simplicial biyevtiva $f\colon V(\Delta)\rightarrow V(K)$ que mapea a cada vértice $v$ de $\Delta$ en un punto $f(v)$ en $\mathbb{R}^N$ que es un vértice de $K$. Para fines prácticos no haremos distinción entre $v$ y $f(v)$.
+Como $\Delta$ y el esquema de vértices de $K$ son isomorfos existe una función simplicial biyectiva $f\colon V(\Delta)\rightarrow V(K)$ que mapea a cada vértice $v$ de $\Delta$ en un punto $f(v)$ en $\mathbb{R}^N$ que es un vértice de $K$. Para fines prácticos no haremos distinción entre $v$ y $f(v)$.
 
 \section{Soportes contraíbles}
 \begin{Defi}
 Suponga $\Delta$ un complejo simplicial y $X$ un espacio. Una función $C$ la cual envía simplejos de $\Delta$ a subespacios de $X$ es un soporte contraíble si:
-\begin{itemize}
+\begin{enumerate}
 \item Para todo simplejo $\sigma$ de $\Delta$, $C(\sigma)$ es contraíble.
 \item Si $\tau$ es una cara de $\sigma$, entonces $C(\tau)\subset C(\sigma)$
-\end{itemize}
+\end{enumerate}
 \end{Defi}
 
 \begin{Teo}
 Si $C$ es un soporte contraíble de un complejo simplicial finito $\Delta$ a un espacio $X$, entonces
-\begin{itemize}
+\begin{enumerate}
 \item Existe una función continua $g\colon \abs{\Delta}\rightarrow X$ soportada por $C$.
 \item Cualesquiera dos funciones continuas soportadas por $C$ son homotópicas.
-\end{itemize}
+\end{enumerate}
 \end{Teo}

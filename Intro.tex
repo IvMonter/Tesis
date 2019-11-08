@@ -47,21 +47,39 @@ E(K(G))&=\{\{q_1,q_2\}: q_1\neq q_2 \text{ y } q_1\cap q_2 \neq \varnothing \}
 \end{Defi}
 
 \section{Espacios topológicos}
-%\begin{Defi}
-%Una topología sobre un conjunto $X$ es una colección de conjuntos 
-%\end{Defi}
 \begin{Defi}
-Dos espacios topológicos son equivalentes homotópicamente si existen mapas continuos  $f\colon X\rightarrow Y$,$g\colon Y\rightarrow X$ (llamados equivalencias homotópicas) tal que $f\circ g$ es homotópica a la identidad en $Y$ y $g\circ f$ es homotópica a la identidad en $X$
+Dos espacios topológicos \mm{X} y $Y$ son equivalentes homotópicamente si existen mapas continuos  $f\colon X\rightarrow Y$,$g\colon Y\rightarrow X$ (llamados equivalencias homotópicas) tal que $f\circ g$ es homotópica a la identidad en $Y$ y $g\circ f$ es homotópica a la identidad en $X$
 \end{Defi}
 
 \begin{Defi}
 Un espacio $X$ es contraíble si es homotópicamente equivalente a un punto.
 \end{Defi}
+
+\begin{Teo}\label{TFEC}
+Sea $X$ un espacio, y \mm{\sim} una relación de equivalencia en $X$. Sea \mm{g\colon X\rightarrow Z} una función continua tal que \mm{g(x)=g(x^{'})} siempre que \mm{x\sim x^{'}}. Entonces, si denotamos por \mm{p\colon X\rightarrow X / \sim} al mapeo cociente inducido por \mm{\sim}, el mapeo $g$ induce un único mapeo continuo \mm{\bar{g}\colon X / \sim\rightarrow Z} tal que \mm{\bar{g}\circ p = g}
+\end{Teo}
+\begin{Lema}\label{lemah}
+Sea $\sim$ una relación de equivalencia en $S^n\times I$ dada por $(x,t)\sim (y,s)$ si y sólo si $t = s = 1$ o $(x,t)=(y,s)$. Entonces $S^n\times I /\sim$ es homeomorfo a $D^{n+1}$.
+\end{Lema}
+\begin{Dem}
+
+Definamos $g\colon S^n\times I\rightarrow D^{n+1}$ como $g(x,t) = (1-t)x$, claramente $g$ es continua. Sea $p$ el mapeo cociente inducido por $\sim$, si $g(x,t) = g(y,s)$, calculando la norma de ambos lados tenemos que  $t = s$, de donde se sigue que $(1-t)(x-y)=0$. Si $x = y$ entonces $(x,t) = (y,s)$ y por lo tanto $(x,t)\sim (y,s)$. Por otro lado si $t = 1$, se tiene que $(x,1)\sim(y,1)$.
+Por el teorema \ref{TFEC} existe una función continua continua $\bar{g}\colon S^n\times I/\sim \rightarrow D^{n+1}$ tal que \mm{\bar{g}\circ p = g}.
+
+Para mostrar que $\bar{g}$ es un homeomorfismo basta mostrar que $\bar{g}$ es biyectiva.
+Si  $\bar{g}([(x,t)]) =g(x,t)= \bar{g}([(y,s)]) = g(y,s)$, entonces $(x,t)\sim (y,s)$ y por lo tanto $[(x,t)] = [(y,s)]$ y por lo tanto $\bar{g}$ es inyectiva.
+Para comprobar la sobreyectividad consideremos $x$ en $D^{n+1}$, si $x=0$ entonces $\bar{g}([(1,1)])= g(1,1) = 0$, si $x\neq 0$, entonces $\bar{g}([(\frac{x}{\parallel x\parallel},1-\parallel x\parallel)]) = (1-1+\parallel x\parallel)\frac{x}{\parallel x\parallel} = x$. 
+
+Notemos que $\bar{g}$ mapea $S^n\times{0}$ en $S^n$.
+
+
+\end{Dem}
 \begin{Teo}
-Sea $X$ un espacio contraíble y $f$ una función de $S^n$ en $X$. Entonces f puede extenderse a una función de $D^{n+1}$ en X.
+Sea $X$ un espacio contraíble y $f$ una función de $S^n$ en $X$. Entonces \mm{f} puede extenderse a una función de $D^{n+1}$ en X.
 \end{Teo}
  
 \begin{Dem}
+
 Como $X$ es contraíble, existe $H\colon X\times I \rightarrow X$ tal que:
 \begin{eqnarray}
 H(x,0)=x \\
@@ -74,12 +92,14 @@ Definamos $G\colon S^n\times I \rightarrow X$ como:
 G(u,t) = H(f(u),t)
 \end{equation}
 En $S^n\times I$ definimos una relación por $(u,1)\sim(u^{'},1)$ para toda $u$, $u^{'}$ en $S^n$
-Ahora veamos que los elementos de la clase de equivalencia de $(u,0)$ bajo $G$ son enviados al mismo elemento en $X$.
+Ahora veamos que los elementos de la clase de equivalencia de $(u,1)$ bajo $G$ son enviados al mismo elemento en $X$.
 
 Si $u$, $u^{'}$ pertenecen a $S^n$ se tiene que
 \begin{eqnarray}
 G(u,1) = H(f(u),1) = x_0\\
-G(u^{'},1)=H(f(u^{'},1) = x_0
+G(u^{'},1)=H(f(u^{'})+,1) = x_0
 \end{eqnarray}
-Por lo tanto existe $\bar{G}$ continua de $S^n\times I /{\sim}$ en $X$.
+Por lo tanto existe $\bar{G}$ continua de $S^n\times I /{\sim}$ en $X$, tal que $\bar{G}\circ p = G$.
+Por último sea $J$ la inversa de la función  $\bar{g}$ dada por el lema \ref{lemah}, entonces $\bar{G}\circ J \colon D^{n+1}\rightarrow X$ es continua y tal que 
 \end{Dem}
+
