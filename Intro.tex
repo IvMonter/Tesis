@@ -15,6 +15,15 @@ Sea $G$ una gráfica, si $e =\{x,y\}$ pertenece a $E(G)$ decimos que $x$ y $y$ s
  Notemos que de la definición se deduce que $x\nsim x$ y si $x\sim y$ entonces $y\sim x$, además para cualesquiera puntos $x,y$ en $V(G)$ existe a lo más una arista entre ellos. Este tipo de gráficas se conocen como gráficas simples, las gráficas que consideraremos serán de este tipo.  
 Existen otras variaciones de gráficas en las que se permiten multiples aristas y lazos (aristas de un vértice en sí mismo) para ver más consulte \cite{Harary1969} 
 
+\begin{Defi}[Subgráfica]
+Una gráfica $H$ es una subgráfica de $G$ si $V(H)\subset V(G)$ y $E(H)\subset E(G)$. Si además 
+\begin{equation*}
+E(H) = \{\{x,y\}\colon x,y \in V(H), {x,y}\in V(G)\}
+\end{equation*}
+decimos que $H$ es una subgráfica inducida de $G$.
+\end{Defi}
+Notemos que una subgráfica inducida está determinada por su conjunto de vértices. Así que para referirnos a ella usaremos su conjunto de vértices
+
 \begin{Defi}
 El orden de una gráfica $G$ es su número de vértices y lo denotamos por $\abs{G}$.
 \end{Defi}
@@ -25,8 +34,12 @@ Dado un vértice $x$ de un  gráfica $G$, su vecindad abierta se define como $N_
 Dado un vértice $x$ de un  gráfica $G$, decimos que $x$ es un vértice dominado si existe $y$ en $N_{G}(x)$ tal que $N_{G}(x)$ está contenido en $N_{G}(y)\cup\{y\}$.
 \end{Defi}
 
+\begin{Defi}
+Sean $G$ y $H$ gráficas. Un morfismo de gráficas $f\colon G \rightarrow H$ es una función $f\colon: V(G)\rightarrow V(H)$ tal que si $x\simeq y$ implica $f(x)\simeq f(y)$.
+\end{Defi}
+
 \begin{Defi}[Isomorfismo]
-Sean $G$ y $H$ dos gráficas, $G$ y $H$ son isomorfas si existe una función biyectiva de los vértices de una en la otra tal que preserva las adyacencias. En tal caso escribimos $G\cong H$.
+Sean $G$ y $H$ gráficas, $G$ y $H$ son isomorfas si existe una función biyectiva de los vértices de una en la otra tal que preserva las adyacencias. En tal caso escribimos $G\cong H$.
 \end{Defi}
 En principio los elementos del conjunto de vértices de una gráfica son arbitrarios, pero dado que las propiedades generales de gráficas son invariantes bajo isomorfismo podemos representar geométricamente una gráfica sin perder generalidad. Lo usual es pensar en los vértices como puntos en $\mathbb{R}^2$ y las aristas como lineas rectas entre ellos.
 
@@ -38,6 +51,26 @@ Sea $G$ una gráfica, una completa de $G$ es un subconjunto $c$ de $V(G)$ tal qu
 Sea $G$ una gráfica, un clan $q$ de $G$ es una completa maximal bajo inclusión.
 \end{Defi}
 
+\begin{Prop}
+Sea $G$ una gráfica y $c$ una completa de $G$. Entonces existe un clan que contiene a $c$.
+\end{Prop}
+\begin{Dem}
+Si $c$ es un clan, está contenida en sí misma. Si $c$ no es un clan entonces existe $v$ en $V(G)$ tal que $v$ no está en $c$ y $v\sim x$ para toda $x$ en $c$. 
+Luego $c_1 = c\cup \{v\}$ es una completa. 
+Procedemos de está manera hasta obtener un clan que contiene a $c$, lo que es posible dado que el conjunto de vértices es finito.  
+\end{Dem}
+
+\begin{Prop}
+Sea $c$ una completa tal que $N(c) = \cap_{x\in c}N_G(x)$ es una completa. Entonces $c\cup N(c)$ es el único clan que contiene a $c$.
+\end{Prop}
+\begin{Dem}
+Primero veamos que $c\cup N(c)$ es una completa. Para ello consideremos tres casos. Sean $x$ y $y$ vértices en $c\cup N(c)$, si $x$ y $y$ pertenecen a $c$ entonces $x\sim y$. Si $x$ y $y$ pertenecen a $N(c)$ entonces $x$ pertenece a$ N_G(y)$ y por lo tanto $x\sim y$. Si $x$ pertenece a $c$ y $y$ pertenece a $N(c)$, entonces y está en $N_G(x)$ lo que implica que $x\sim y$. 
+
+Ahora supongamos que $c\cup N(c)$  no es maximal, entonces existe $w$ en $V(G)$ tal que $w\sim x$ para toda $x$ en $c\cup N(c)$, pero $w$ no pertenece a $c\cup N(c)$. En particular $w\sim x$ para toda $x$ en $c$, lo que implica que $w$ pertenece a $\cap_{x\in c}N_G(x)$ para toda $x$, lo cual es una contradicción.
+
+Para verificar que $c\cup N(c)$ es único, supongamos $q$ un clan que contiene a $c$. Entonces $q\subseteq \cap_{x\in c}N_G(x)\subseteq c\cup N(c) $. Como $q$ es un clan se tiene que $q = c\cup N(c)$.
+\end{Dem}
+
 \begin{Defi}[Gráfica de clanes]
 Sea $G$ una gráfica, la gráfica de clanes $K(G)$ de G está dada por:
 \begin{align*}
@@ -46,6 +79,16 @@ E(K(G))&=\{\{q_1,q_2\}: q_1\neq q_2 \text{ y } q_1\cap q_2 \neq \varnothing \}
 \end{align*}
 \end{Defi}
 
+\begin{Defi}
+Sea $G$ una gráfica. Definimos $K^{0}$ como $G$ y para $n>0$, definimos $K^n(G)$ como $K(K^{n-1})$.
+
+La sucesión de gráficas $G = K^{0}, K(G) = K^1(G), K^2(G),\ldots$ es la sucesión de gráficas de clanes iteradas. 
+\end{Defi}
+
+\begin{Defi}
+Si la gráfica $G$ es tal que el conjunto de ordenes de la sucesión de gráficas de clanes iteradas es no acotada decimos que $G$ es clan divergente.
+En caso contrario decimos que $G$ es clan convergente.
+\end{Defi}
 \section{Espacios topológicos}
 \begin{Defi}
 Dos espacios topológicos \mm{X} y $Y$ son equivalentes homotópicamente si existen mapas continuos  $f\colon X\rightarrow Y$,$g\colon Y\rightarrow X$ (llamados equivalencias homotópicas) tal que $f\circ g$ es homotópica a la identidad en $Y$ y $g\circ f$ es homotópica a la identidad en $X$
