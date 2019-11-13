@@ -42,7 +42,7 @@ Sea $f\colon\abs{P\times \{0,1\}} \rightarrow \abs{P}\times [0,1]$ dada por
 \begin{equation*}
 f(z)= (\phi_1(z),\phi_2(z))
 \end{equation*}
-f es continua por ser $\phi_1$ y $\phi_2$ continuas, además $f$ es inyectiva ya que si $f(z)=f(\hat{z})$ podemos escribir a $z$ y $\hat{z}$ como:
+$f$ es continua por ser $\phi_1$ y $\phi_2$ continuas, además $f$ es inyectiva ya que si $f(z)=f(\hat{z})$ podemos escribir a $z$ y $\hat{z}$ como:
 \begin{eqnarray}
 z = \sum_{i=0}^{n}t_i(p_i,b_i)\\
 \hat{z} = \sum_{i=0}^{m}\hat{t_i}(\hat{p_i},\hat{b_i})
@@ -139,6 +139,21 @@ Sea $P$ un conjunto parcialmente ordenado finito. Entonces $P_{\leqslant x}$ y $
 \begin{Teo}
 Sean $P$ y $Q$ conjuntos parcialmente ordenados. Sea $f\colon P\rightarrow Q$ una función que preserva el orden, tal que todas sus fibras son contraíbles. Entonces $f$ induce una equivalencia homotópica entre $P$ y $Q$.
 \end{Teo}
+\begin{Dem}
+
+La función $\sigma \rightarrow \abs{f^{-1}}(Q_{\leqslant \max \sigma})$ es un soporte contraíble de $\Delta (Q)$ en $\abs{P}$ ya que por hipótesis todas la fibras de $f$ son contraíbles y además si $\tau\subset \sigma$, entonces $\max \tau \leqslant\max\sigma$ y por lo tanto $Q_{\leqslant \max \tau} \subset Q_{\max \sigma}$ y al aplicar imagen inversa la contención se mantiene.
+
+Luego por el inciso $(a)$ del teorema \ref{soportec} existe una función continua $g$ de $\abs{Q}$ en $\abs{P}$ tal que $g(\abs{\sigma})\subset \abs{f^{-1}(Q_{\leqslant \max\sigma})}$ para todo simplejo $\sigma$ de $\Delta(Q)$.
+
+Mostraremos que $g$ es la inversa homotópica de $\abs{f}$ usando la parte $(b)$ del teorema \ref{soportec}.
+
+Primero veamos que $\abs{f}\circ g$ es homotópica a la identidad en $\abs{Q}$. Sea $\sigma$ un simplejo de $Q$. Entonces:
+\begin{equation}
+g(\abs{\sigma})\subset \abs{f^{-1}(Q_{\leqslant \max\sigma})} = f^{-1}(\abs{Q_{\leqslant\max\sigma}})
+\end{equation}
+Al aplicar la imagen directa de $f$ en ambos lados tenemos que 
+
+\end{Dem}
 
 
 % Local Variables:

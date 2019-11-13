@@ -157,9 +157,11 @@ Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N
 \item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
 \item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
 \item Dado un simplejo $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
-\item Existe un homeomorfismo f de $\sigma$ en la bola unitaria $B^n$, tal que $Bd\sigma$ es mapeada a $S^n$, es decir $f(Bd\sigma) = S^{n-1}$.
 \end{enumerate}
 \end{Prop}
+\begin{Teo}
+\item Existe un homeomorfismo $f$ de el $n$-simplejo $\sigma$ en el disco unitario $D^n$, tal que $Bd\sigma$ es mapeada a $S^{n-1}$, es decir $f(Bd\sigma) = S^{n-1}$.
+\end{Teo}
 
 \subsection{Complejos en $\mathbb{R}^N$}
 \begin{Defi}[Complejo simplicial geométrico]
@@ -279,10 +281,13 @@ Suponga $\Delta$ un complejo simplicial y $X$ un espacio. Una función $C$ la cu
 \item Si $\tau$ es una cara de $\sigma$, entonces $C(\tau)\subset C(\sigma)$
 \end{enumerate}
 \end{Defi}
+\begin{Defi}
+Una función $f\colon \abs{\Delta} \rightarrow X$ está soportada por $C$ si, para cada simplejo $\sigma$ de $\Delta$, $f(\abs{\sigma})\subset C(\sigma)$.
+\end{Defi}
 
-\begin{Teo}
+\begin{Teo}\label{soportec}
 Si $C$ es un soporte contraíble de un complejo simplicial finito $\Delta$ a un espacio $X$, entonces
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Existe una función continua $g\colon \abs{\Delta}\rightarrow X$ soportada por $C$.
 \item Cualesquiera dos funciones continuas soportadas por $C$ son homotópicas.
 \end{enumerate}
