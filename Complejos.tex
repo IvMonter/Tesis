@@ -23,7 +23,7 @@ Dos complejos simpliciales $\Delta_1$ y $\Delta_2$ son isomorfos si existe una f
 \end{Defi}
 
 \begin{Defi}
-Sea $\Delta$ un complejo simplicial, definimos el $p$-esqueleto de $\Delta$ como el complejo simplicial que consiste de todos los simplejos de $\Delta$ de dimensión menor o igual a $p$ y lo denotamos por $\Delta^(p)$.
+Sea $\Delta$ un complejo simplicial, definimos el $p$-esqueleto de $\Delta$ como el complejo simplicial que consiste de todos los simplejos de $\Delta$ de dimensión menor o igual a $p$ y lo denotamos por $\Delta^{(p)}$.
 \end{Defi}
 %\begin{Ejem}
 %Dada una gráfica $G$, denotemos por $\Delta(G)$ la colección de completas de $G$. Es fácil ver que si $c$ es una completa de $G$ entonces cualquier subconjunto no vacío $s$ de $c$ es una completa. Ya que si $x$ y $y$ pertenecen a $s$ entonces $x$ y $y$ pertenecen a $c$ y por lo tanto son adyacentes. En consecuencia $\Delta(G)$ es un complejo simplicial. La dim $\Delta(G)$ es igual al máximo de el conjunto de ordenes de las completas de $G$  y los vértices de $\Delta(G)$ son los vértices de $G$ 
@@ -154,11 +154,36 @@ Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de to
 \begin{Prop}
 Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
 \begin{enumerate}[(a)]
-\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
+%\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
 \item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
 \item Dado un simplejo $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
 \end{enumerate}
 \end{Prop}
+\begin{Dem}
+\begin{enumerate}[(a)]
+\item Sea $x$ y $y$ puntos en $\sigma$, entonces son de la forma
+\begin{align*}
+&x = t_0(x)a_0+\cdot +t_n(x)a_n ,\\
+&x = t_0(y)a_0+\cdot +t_n(y)a_n
+\end{align*}
+Ahora consideremos las combinaciones convexas de $x$ y $y$. Dadas por 
+$\lambda x + (1-\lambda)y$, con $\lambda$ en el intervalo $[0,1]$. 
+Re-ordenando términos tenemos que
+$\lambda x + (1-\lambda)y = [\lambda t_0(x)+(1-\lambda)t_0(y)]a_0+\cdots + [\lambda t_n(x)+(1-\lambda)t_n(y)]a_n$. 
+
+Tenemos que $\lambda t_i(x)+(1-\lambda)t_i(y)$ es mayor que cero para toda $i = 0,\ldots ,n$ y además
+\begin{align*}
+\lambda t_i(x)+(1-\lambda)t_i(y)&=  \sum_{i=0}^{n}\lambda t_i(x)+\sum_{i=0}^{n}(1-\lambda)t_i(y) \\
+&= \lambda\sum_{i=0}^{n}t_i(x)+(1-\lambda)\sum_{i=0}^{n}t_i(y)\\ 
+&= \lambda + (1-\lambda)\\
+& = 1
+\end{align*}
+Por lo tanto $\lambda x + (1-\lambda)y$ pertenece a $\sigma$.
+ 
+
+
+\end{enumerate}
+\end{Dem}
 \begin{Teo}
 \item Existe un homeomorfismo $f$ de el $n$-simplejo $\sigma$ en el disco unitario $D^n$, tal que $Bd\sigma$ es mapeada a $S^{n-1}$, es decir $f(Bd\sigma) = S^{n-1}$.
 \end{Teo}
@@ -198,7 +223,10 @@ El espacio $\abs{K}$ es llamado el \textbf{espacio subyacente} de $K$ o el \text
 
 El siguiente teorema nos permite caracterizar las funciones continuas de $\abs{K}$ en algún espacio topológico.
 \begin{Teo}\label{ttc}
-Un mapa $f\colon \abs{K}\rightarrow X$ es continuo si y sólo si $f|_{\sigma}$ es continua para cada $\sigma$ en $K$
+Una función $f\colon \abs{K}\rightarrow X$ es continua si y sólo si $f|_{\sigma}$ es continua para cada $\sigma$ en $K$
+\end{Teo}
+\begin{Teo}
+Una función $H\colon \abs{K}\times I \to X$ es continua si y solo si $H$ restringida a cada celda $\abs{\sigma}\times I$ es continua.
 \end{Teo}
 \begin{Teo}
 $\abs{K}$ es Hausdorff
@@ -260,7 +288,7 @@ Dos complejos simpliciales geométricos $L$ y $K$ son linealmente isomorfos si e
 El teorema principal que nos permite relacionar los complejos simpliciales con los complejos simpliciales geométricos es el siguiente:
 \begin{Teo}\label{tpc} 
 ~\begin{enumerate}
-\item Todo complejo simplicial $\mathcal{\Delta}$ es isomorfo al esquema de vértices de algún complejo simplicial geométrico $K$.
+\item Todo complejo simplicial $\Delta$ es isomorfo al esquema de vértices de algún complejo simplicial geométrico $K$.
 \item Dos complejos simpliciales geométricos son linealmente isomorfos si y sólo si sus esquemas de vértices son isomorfos como complejos simpliciales.
 \end{enumerate}
 \end{Teo}
@@ -292,3 +320,23 @@ Si $C$ es un soporte contraíble de un complejo simplicial finito $\Delta$ a un 
 \item Cualesquiera dos funciones continuas soportadas por $C$ son homotópicas.
 \end{enumerate}
 \end{Teo}
+\begin{Dem}
+\begin{enumerate}[(a)]
+\item Construiremos $g$ por inducción sobre los $n$-esqueletos de $K$. 
+Como base de inducción, para cada vértice $v$ en $K^{0}$ sea $g(v)$ cualquier punto de $C(v)$.
+
+La hipótesis inductiva es que $g\colon \abs{K^{n}} \to X$ es continua y $g(\abs{\sigma})$ está contenida en $C(\sigma)$ para toda $\sigma$ en $K^{(n)}$.
+
+Supongamos que $\tau$ es un $(n+1)-$simplejo, entonces para cada cara propia de $\sigma$ de $\tau$, sabemos que $g(\abs{\sigma})\subset C(\sigma)\subset C(\tau)$, por lo tanto $g(\abs{Bd \tau})$ está contenido en $C(\tau)$ y como $C(\tau)$ es contraíble por el teorema \ref{ext_general} $g$ puede ser extendida continuamente a $\abs{\tau}$ de modo que $g(\abs{\tau}) \subset C(\tau)$. 
+Luego como $g$ es continua en cada simplejo se sigue que $g$ es continua en $\abs{K}$.
+
+\item Supongamos $f$ y $g$ funciones de $\abs{K}$ en $X$, soportadas por $C$. Construiremos por inducción una homotopía $H\colon \abs{K} \to X$ desde $f$ a $g$, es decir con $H(x,0) = f(x)$ y $H(x,1) = g(x)$.
+Definamos $H\colon \abs{K}\times\{0,1\} \to X$ por $H(x,0) = f(x)$ y $H(x,1) = f(x)$.
+Si $v$ es un vértice de $K$, entonces $f(v)$ y $g(v)$ pertenecen a $C(v)$. Como $C(v)$ es contraíble, $H$ puede extenderse continuamente a $\{v\}\times I$.
+
+La hipótesis de inducción es que $H$ está definida de manera continua en $\abs{K}\times \{0,1\}\cup \abs{K^{(n)}}\times I$ y $H(\abs{\sigma}\times I)$ está contenido en $C(\sigma)$ para cada $\sigma$ en $K^{(n)}$.
+Supongamos que $\tau$ es un $(n+1)-$simplejo, entonces para cada cara propia de $\sigma$ de $\tau$, sabemos que $\abs{\sigma}\times$ está contenida en $C(\sigma)$ y que $C(\sigma)$ está contenido en $C(\tau)$, esto para toda $\sigma$ cara propia de $\tau$. Por lo tanto $H(\abs{Bd\tau})$ está contenida en $C(\tau)$. Por lo tanto $H$ puede ser extendida continuamente a $\abs{\tau}\times I$ de modo que $H(\abs{\tau}\times I)$ está contenida en $C(\tau)$.
+Luego como $H$ es continua en cada celda $\abs{\sigma}\times I$, $H$ es continua en $\abs{K}\times I$.
+
+\end{enumerate}
+\end{Dem}

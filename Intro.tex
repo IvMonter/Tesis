@@ -13,7 +13,7 @@ donde $E(G)\subseteq \{\{x,y\}\subseteq V(G):x \neq y\}$. El conjunto $V(G)$ es 
 Sea $G$ una gráfica, si $e =\{x,y\}$ pertenece a $E(G)$ decimos que $x$ y $y$ son adyacentes y escribimos $x \sim y$.
 \end{Defi}
  Notemos que de la definición se deduce que $x\nsim x$ y si $x\sim y$ entonces $y\sim x$, además para cualesquiera puntos $x,y$ en $V(G)$ existe a lo más una arista entre ellos. Este tipo de gráficas se conocen como gráficas simples, las gráficas que consideraremos serán de este tipo.  
-Existen otras variaciones de gráficas en las que se permiten multiples aristas y lazos (aristas de un vértice en sí mismo) para ver más consulte \cite{Harary1969} 
+Existen otras variaciones de gráficas en las que se permiten multiples aristas y lazos (aristas de un vértice en sí mismo) para ver más consulte \cite{Harary1969}. 
 
 \begin{Defi}[Subgráfica]
 Una gráfica $H$ es una subgráfica de $G$ si $V(H)\subset V(G)$ y $E(H)\subset E(G)$. Si además 
@@ -25,7 +25,7 @@ decimos que $H$ es una subgráfica inducida de $G$.
 Notemos que una subgráfica inducida está determinada por su conjunto de vértices. Así que para referirnos a ella usaremos su conjunto de vértices
 
 \begin{Defi}
-El orden de una gráfica $G$ es su número de vértices y lo denotamos por $\abs{G}$.
+El orden de una gráfica $G$ es su número de vértices y lo denotamos por $o(G)$.
 \end{Defi}
 \begin{Defi}
 Dado un vértice $x$ de un  gráfica $G$, su vecindad abierta se define como $N_{G}(x) = \{y\in V(G): y\sim x\}$ 
@@ -90,6 +90,7 @@ Si la gráfica $G$ es tal que el conjunto de ordenes de la sucesión de gráfica
 En caso contrario decimos que $G$ es clan convergente.
 \end{Defi}
 \section{Espacios topológicos}
+En está sección se exponen definiciones y teoremas del área de topología que serán de gran utilidad para evidenciar las propiedades de la realización geométrica de una gráfica que se preservan bajo el operador de clanes. 
 \begin{Defi}
 Dos espacios topológicos \mm{X} y $Y$ son equivalentes homotópicamente
 si existen mapas continuos  $f\colon X\rightarrow Y$, $g\colon Y\rightarrow X$ (llamados equivalencias homotópicas) tal que $f\circ g$ es homotópica a la identidad en $Y$ y $g\circ f$ es homotópica a la identidad en $X$
@@ -108,7 +109,7 @@ por~\mm{\sim}, el mapeo $g$ induce un único mapeo continuo
 \mm{\bar{g}\colon X /\!\!\sim\,\to Z} tal que \mm{\bar{g}\circ p = g}
 \end{Teo}
 \begin{Lema}\label{lemah}
-Sea $\sim$ una relación de equivalencia en $S^n\times I$ dada por $(x,t)\sim (y,s)$ si y sólo si $t = s = 1$ o $(x,t)=(y,s)$. Entonces $(S^n\times I)/\!\!\!\sim$ es homeomorfo a $D^{n+1}$.
+Sea $\sim$ una relación de equivalencia en $S^n\times I$ dada por $(x,t)\sim ~(y,s)$ si y sólo si $(x,t)$ es igual a $(y,s)$ o $t \!=\! s \!=\! 1$. Entonces $(S^n\times I)/\!\!\sim$ es homeomorfo a $D^{n+1}$.
 \end{Lema}
 \begin{Dem}
 
@@ -121,17 +122,16 @@ Si  $\bar{g}([(x,t)]) =g(x,t)= \bar{g}([(y,s)]) = g(y,s)$, entonces
 $(x,t)\sim (y,s)$ y se sigue que $[(x,t)] = [(y,s)]$, por lo tanto $\bar{g}$ es inyectiva.
 Para comprobar la sobreyectividad consideremos $x$ en $D^{n+1}$, si $x=0$ entonces $\bar{g}([(1,1)])= g(1,1) = 0$, si $x\neq 0$, entonces $\bar{g}([(\frac{x}{\parallel x\parallel},1-\parallel x\parallel)]) = (1-1+\parallel x\parallel)\frac{x}{\parallel x\parallel} = x$. 
 
-Notemos que $\bar{g}$ mapea $S^n\times{0}$ en $S^n$.
 
 
 \end{Dem}
 \begin{Teo}
-Sea $X$ un espacio contraíble y $f$ una función de $S^n$ en $X$. Entonces \mm{f} puede extenderse a una función de $D^{n+1}$ en X.
+Sea $X$ un espacio contraíble y $f$ una función continua de $S^n$ en $X$. Entonces \mm{f} puede extenderse continuamente a una función de $D^{n+1}$ en X.
 \end{Teo}
  
 \begin{Dem}
 
-Como $X$ es contraíble, existe $H\colon X\times I \rightarrow X$ tal que:
+Como $X$ es contraíble, existe una función continua $H\colon X\times I \rightarrow X$ tal que:
 \begin{eqnarray}
 H(x,0)=x \\
 H(x,1) = x_0
@@ -150,11 +150,17 @@ Si $u$, $u'$ pertenecen a $S^n$ se tiene que
 G(u,1) = H(f(u),1) = x_0\\
 G(u',1)=H(f(u')+,1) = x_0
 \end{eqnarray}
-Por lo tanto existe $\bar{G}$ continua de $S^n\times I /{\sim}$ en $X$, tal que $\bar{G}\circ p = G$.
-Por último sea $J$ la inversa de la función  $\bar{g}$ dada por el lema \ref{lemah}, entonces $\bar{G}\circ J \colon D^{n+1}\rightarrow X$ es continua y tal que 
+Por lo tanto existe $\bar{G}$ continua de $(S^n\times I) /{\sim}$ en $X$, tal que $\bar{G}\circ p = G$.
+Por último consideremos la función $\bar{g}$ dada por el teorema \ref{lemah}, notemos que $\bar{g}(\{[(x,0]\}\colon x\in S^n\})$ es igual a $S^n$. Sea $J$ la inversa de la función  , entonces $\bar{G}\circ J \colon D^{n+1}\rightarrow X$ es continua y tal que si $x$ pertenece a $S^n$, se tiene que $\bar{G}\circ J = \bar{G}([(x,0)])= H(f(x),0) = f(x)$.
 \end{Dem}
 
+\begin{Teo}
+Sea $U$ un conjunto acotado, convexo y abierto en $\mathbb{R}^n$. Entonces existe un homeomorfismo de $\bar{U}$ con la bola unitaria $B^n$ que mapea Bd $U$ en $S^{n-1}$.
+\end{Teo}
 
+\begin{Teo}\label{ext_general}
+Sea $U$ un conjunto acotado, convexo y abierto en $\mathbb{R}^n$. Sea $f$ una función continua de Bd $U$ en $X$. Entonces \mm{f} puede extenderse continuamente a una función de $\bar{U}$ en X.
+\end{Teo}
 % Local Variables:
 % TeX-master: "tesis.tex"
 % End:
