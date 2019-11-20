@@ -323,20 +323,33 @@ Si $C$ es un soporte contraíble de un complejo simplicial finito $\Delta$ a un 
 \begin{Dem}
 \begin{enumerate}[(a)]
 \item Construiremos $g$ por inducción sobre los $n$-esqueletos de $K$. 
-Como base de inducción, para cada vértice $v$ en $K^{0}$ sea $g(v)$ cualquier punto de $C(v)$.
+Como base de inducción, para cada vértice $v$ en $K^{(0)}$ sea $g(v)$ cualquier punto de $C(v)$.
 
-La hipótesis inductiva es que $g\colon \abs{K^{n}} \to X$ es continua y $g(\abs{\sigma})$ está contenida en $C(\sigma)$ para toda $\sigma$ en $K^{(n)}$.
+La hipótesis inductiva es que $g\colon \abs{K^{(n)}} \to X$ es continua y $g(\abs{\sigma})$ está contenida en $C(\sigma)$ para toda $\sigma$ en $K^{(n)}$.
 
-Supongamos que $\tau$ es un $(n+1)-$simplejo, entonces para cada cara propia de $\sigma$ de $\tau$, sabemos que $g(\abs{\sigma})\subset C(\sigma)\subset C(\tau)$, por lo tanto $g(\abs{Bd \tau})$ está contenido en $C(\tau)$ y como $C(\tau)$ es contraíble por el teorema \ref{ext_general} $g$ puede ser extendida continuamente a $\abs{\tau}$ de modo que $g(\abs{\tau}) \subset C(\tau)$. 
-Luego como $g$ es continua en cada simplejo se sigue que $g$ es continua en $\abs{K}$.
+Supongamos que $\tau$ es un $(n+1)$-simplejo, entonces para cada cara
+propia de $\sigma$ de $\tau$, sabemos que $g(\abs{\sigma})\subset
+C(\sigma)\subset C(\tau)$, por lo tanto $g(\abs{\bd \tau})$ está
+contenido en $C(\tau)$. Como $C(\tau)$ es contraíble, por el
+teorema~\ref{ext_general}, se obtiene que~$g$ puede ser extendida continuamente a $\abs{\tau}$ de modo que $g(\abs{\tau}) \subset C(\tau)$. 
+Como $g$ es continua en cada simplejo se sigue que~$g$ es continua en $\abs{K}$.
 
 \item Supongamos $f$ y $g$ funciones de $\abs{K}$ en $X$, soportadas por $C$. Construiremos por inducción una homotopía $H\colon \abs{K} \to X$ desde $f$ a $g$, es decir con $H(x,0) = f(x)$ y $H(x,1) = g(x)$.
-Definamos $H\colon \abs{K}\times\{0,1\} \to X$ por $H(x,0) = f(x)$ y $H(x,1) = f(x)$.
+Definamos $H\colon \abs{K}\times\{0,1\} \to X$ por $H(x,0) = f(x)$ y $H(x,1) = g(x)$.
 Si $v$ es un vértice de $K$, entonces $f(v)$ y $g(v)$ pertenecen a $C(v)$. Como $C(v)$ es contraíble, $H$ puede extenderse continuamente a $\{v\}\times I$.
 
 La hipótesis de inducción es que $H$ está definida de manera continua en $\abs{K}\times \{0,1\}\cup \abs{K^{(n)}}\times I$ y $H(\abs{\sigma}\times I)$ está contenido en $C(\sigma)$ para cada $\sigma$ en $K^{(n)}$.
-Supongamos que $\tau$ es un $(n+1)-$simplejo, entonces para cada cara propia de $\sigma$ de $\tau$, sabemos que $\abs{\sigma}\times$ está contenida en $C(\sigma)$ y que $C(\sigma)$ está contenido en $C(\tau)$, esto para toda $\sigma$ cara propia de $\tau$. Por lo tanto $H(\abs{Bd\tau})$ está contenida en $C(\tau)$. Por lo tanto $H$ puede ser extendida continuamente a $\abs{\tau}\times I$ de modo que $H(\abs{\tau}\times I)$ está contenida en $C(\tau)$.
+Supongamos que $\tau$ es un $(n+1)-$simplejo, entonces para cada cara
+propia de $\sigma$ de $\tau$, sabemos que $\abs{\sigma}$ está
+contenida en $C(\sigma)$ y que $C(\sigma)$ está contenido en
+$C(\tau)$. Por lo tanto
+$H(\abs{\bd\tau}\times I)$ está contenida en $C(\tau)$. Se obtiene
+entonces que $H$ puede ser extendida continuamente a $\abs{\tau}\times I$ de modo que $H(\abs{\tau}\times I)$ está contenida en $C(\tau)$.
 Luego como $H$ es continua en cada celda $\abs{\sigma}\times I$, $H$ es continua en $\abs{K}\times I$.
 
 \end{enumerate}
 \end{Dem}
+
+% Local Variables:
+% TeX-master: "tesis.tex"
+% End:
