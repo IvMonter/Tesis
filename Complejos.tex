@@ -1,9 +1,16 @@
 \chapter{Complejos simpliciales}
 El espacio topológico asociado a una gráfica con el que trabajaremos, se construye a partir del complejo simplicial de completas de $G$, al cual se le asocia un complejo geométrico que está equipado con una topología. En este capítulo estudiaremos los complejos y la construcción de la realización geométrica de una gráfica.
 
-\begin{Defi}[Complejo simplicial]
-Un complejo simplicial es una colección $\Delta$ de conjuntos finitos no vacíos tales que si $\sigma$ está en $\Delta$, todo subconjunto no vacío de $\sigma$ también lo está. Un elemento $\sigma$ de $\Delta$ es llamado un simplejo o cara de $\Delta$. 
+\section{Complejos simpliciales abstractos}
+\label{sec:compl-simpl-abstr}
+
+
+\begin{Defi}[Complejo simplicial abstracto]
+Un complejo simplicial abstracto es una colección $\Delta$ de conjuntos finitos no vacíos tales que si $\sigma$ está en $\Delta$, todo subconjunto no vacío de $\sigma$ también lo está. Un elemento $\sigma$ de $\Delta$ es llamado un simplejo o cara de $\Delta$. 
 \end{Defi}
+
+En lo que sigue será frecuente llamar simplemente ``complejo
+simplicial'' a un complejo simplicial abstracto.
 
 \begin{Defi}
 Sea $\Delta$ un complejo simplicial, $\sigma$ y $\tau$ simplejos de $\Delta$. Definimos los siguientes conceptos:
@@ -11,7 +18,9 @@ Sea $\Delta$ un complejo simplicial, $\sigma$ y $\tau$ simplejos de $\Delta$. De
 \item El conjunto de vértices $V$ de un complejo simplicial $\Delta$ es la unión de sus elementos unipuntuales.
 \item Si $\sigma$ contiene $n + 1$ vértices es llamado un $n$-simplejo. La dimensión de $\sigma$ es $n$.
 \item Si $\tau\subset\sigma$ decimos que $\tau$ es una cara de $\sigma$. Si la contención es estricta decimos que $\tau$ es una cara propia de $\sigma$.
-\item La dimensión de $\Delta$ denotada por dim $\Delta$ se define como -1 si $\Delta$ es vacío, $n$ si $\Delta$ tiene un $n$-simplejo, pero no un $(n+1)$-simplejo, o $\infty$ si $\Delta$ contiene un $n$-simplejo para toda $n\geqslant 0$.
+\item La dimensión de $\Delta$ denotada por $\dim\Delta$ se define
+  como $-1$ si $\Delta$ es vacío, como $n$ si $\Delta$ tiene un
+  $n$-simplejo, pero no un $(n+1)$-simplejo, o como $\infty$ si $\Delta$ contiene un $n$-simplejo para toda $n\geq 0$.
 \end{enumerate}
 \end{Defi}
 No haremos distinción entre el vértice $v$ que pertenece a $V$ y el 0-simplejo $\{v\}$ que pertenece a $\Delta$.
@@ -44,6 +53,10 @@ Dado un conjunto finito $\{a_0,\ldots,a_n\}$ de puntos en $\mathbb{R}^{N}$, el c
 es $t_i = 0$ para toda $i$.
 \end{Defi}
 
+Se puede demostrar que un conjunto de puntos es geométricamente
+independiente si y solo si no contiene tres puntos colineales, ni
+cuatro puntos coplanares, etc.
+
 \begin{Teo}
 ~\begin{enumerate}[(a)]
     \item El conjunto $\{a_0,\ldots,a_n\}$ es geométricamente independiente si y sólo si $\{a_1-a_0,\cdots,a_n-a_0\}$ es linealmente independiente.
@@ -53,44 +66,49 @@ es $t_i = 0$ para toda $i$.
 
 \begin{Dem}
 \begin{enumerate}[(a)]
-\item Supongamos $\{a_0,\cdots,a_n\}$ geométricamente independiente, si existe una combinación lineal de $\{a_1-a_0,\ldots,a_n-a_0\}$ tal que $\sum_{i=1}^{n}t_i(a_i-a_0)=0$, reagrupando términos tenemos que $\sum_{i=1}^{n}t_ia_i + (-\sum_{i=1}^{n}t_i)a_0=0$, haciendo $t_0 = -\sum_{i=1}^{n}t_i$, se cumple \ref{s1}, al ser $\{a_0,\ldots,a_n\}$ geométricamente independientes se tiene que $t_i=0$ para toda $i$.
+\item\label{item:1} Supongamos que $\{a_0,\cdots,a_n\}$ es geométricamente
+  independiente. Supongamos una combinación lineal de
+  $\{a_1-a_0,\ldots,a_n-a_0\}$ igual a cero, es decir: $\sum_{i=1}^{n}t_i(a_i-a_0)=0$. Reagrupando términos tenemos que: $\sum_{i=1}^{n}t_ia_i + (-\sum_{i=1}^{n}t_i)a_0=0$. Haciendo $t_0 = -\sum_{i=1}^{n}t_i$, se cumple \ref{s1}, al ser $\{a_0,\ldots,a_n\}$ geométricamente independientes se tiene que $t_i=0$ para toda $i$.
 
 Ahora supongamos que el conjunto $\{a_1-a_0,\ldots,a_n-a_0\}$ es linealmente independiente, si $t_0,\ldots,t_n$ son solución del sistema en \ref{s1}, entonces 
 \begin{align*}
  0&=\sum_{i=0}^{n}t_ia_i\\
- &=\sum_{i=0}^{n}t_ia_i + -(\sum_{i=0}^{n}t_i)a_0\\
+ &=\sum_{i=0}^{n}t_ia_i + (-\sum_{i=0}^{n}t_i)a_0\\
  &=\sum_{i=0}^{n}t_i(a_i-a_0)\\ 
  &= t_0(a_0-a_0) + \sum_{i=1}^{n}t_i(a_i-a_0)\\
  &=\sum_{i=1}^{n}t_i(a_i-a_0)
 \end{align*}
 Por lo tanto $t_i=0$ para toda $i$.
-\item Basta demostrar que al quitarle un elemento al conjunto $\{a_0,\cdots,a_n\}$
+\item Basta demostrar que al quitarle un elemento al conjunto $\{a_0,\ldots,a_n\}$
 el conjunto resultante es geométricamente independiente, sin pérdida
-de generalidad consideremos $\{a_0,\ldots,a_n\}\backslash\{a_n\}$, por (a) tenemos que el
+de generalidad consideremos $\{a_0,\ldots,a_n\}\backslash\{a_n\}$. Por~(\ref{item:1}) tenemos que el
 conjunto $\{a_1-a_0,\ldots,a_n-a_0\}$ es linealmente independiente, y al quitarle
-$a_n-a_0$ sigue siendo linealmente independiente y nuevamente por (a) 
+$a_n-a_0$ sigue siendo linealmente independiente y nuevamente por~(\ref{item:1}) 
 tenemos que $\{a_0,\ldots,a_n\}\backslash\{a_n\}$ es geométricamente independiente.
 \end{enumerate}
 \end{Dem}
 Ejemplos:
 \begin{enumerate}
 \item Conjuntos de un solo punto
-\item Tres puntos no colineales, cuatro puntos no coplanares y así sucesivamente.  
 \item Todo conjunto linealmente independiente
 \item Todo conjunto linealmente independiente unión con el vector cero. 
 \end{enumerate}
 
-\begin{Defi}[Simplejo]
-Sea $\{a_0,\cdots,a_n\}$ un conjunto geométricamente independiente en  $\mathbb{R}^{N}$. Definimos el $n$- simplejo  $\sigma$ generado por $a_0,\cdots,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
+\begin{Defi}[Simplejo geométrico]
+Sea $\{a_0,\ldots,a_n\}$ un conjunto geo\-métricamente independiente en  $\mathbb{R}^{N}$. Definimos el $n$-simplejo geométrico $\sigma$ generado por $a_0,\cdots,a_n$ como el conjunto de todos los puntos $x$ en $\mathbb{R}^{N}$ tales que 
 \begin{equation}\label{s2}
 \begin{split}
 x = \sum_{i=0}^{n}t_ia_i,\\
 \sum_{i=0}^{n}t_i=1
 \end{split}
 \end{equation}
-con $t_i\geqslant 0$ para toda i.
+con $t_i\geq 0$ para toda $i$.
 
-Los puntos $a_0,\ldots,a_n$ que generan a $\sigma$ son llamados los vértices de $\sigma$; y el número $n$ la dimensión de $\sigma$.
+Los puntos $a_0,\ldots,a_n$ que generan a $\sigma$ son llamados los
+vértices de $\sigma$; y el número $n$ la dimensión de $\sigma$. Cuando
+el contexto nos permite distinguir los simplejos geométricos de los
+definidos en la sección~\ref{sec:compl-simpl-abstr}, les llamaremos
+simplemente ``simplejos''.
 \end{Defi}
 
 \begin{figure}[h]
@@ -111,25 +129,36 @@ Los puntos $a_0,\ldots,a_n$ que generan a $\sigma$ son llamados los vértices de
 \draw (4,1.73205) node {$\bullet$};
 \draw (4,0) node[below] {2-simplejo};
 \end{tikzpicture}
-\caption{Ejemplos de simplejos}
+\caption{Ejemplos de simplejos geométricos}
 \end{figure}
 
 Notemos que para $x$ en $\sigma$ los coeficientes $t_i$ están determinados de manera única, ya que si $x = \sum_{i=0}^{n}t_ia_i$ y $x = \sum_{i=0}^{n}s_ia_i$ entonces los $t_i-s_i$ son solución del sistema \ref{s2} por lo que $t_i=s_i$ para toda $i$, lo que nos permite hacer la 
 siguiente definición.
 \begin{Defi}[Coordenadas baricéntricas]
-Sea $\sigma$ un simplejo generado por $a_0,\ldots,a_n$, si $x$ es un punto en $\sigma$, $x$ es de la forma $x = \sum_{i=0}^{n}t_ia_i$ con $t_i\geqslant 0$, las coordenadas baricéntricas $\{t_i(x):i = 0,..n\}$ del punto $x$ en $\sigma$ con respecto a $a_0,...,a_n$ se definen como funciones de $\sigma$ en $\mathbb{R}^{N}$ tales que $t_i(x) = t_i$
+Sea $\sigma$ un simplejo generado por $a_0,\ldots,a_n$. Si $x$ es un
+punto en $\sigma$, entonces $x$ es de la forma $x =
+\sum_{i=0}^{n}t_ia_i$ con $t_i\geq 0$, donde los números $t_i$ están
+determinados por $x$. Las coordenadas baricéntricas $\{t_i(x):i =
+0,\ldots,n\}$ del punto $x$ en $\sigma$ con respecto a $a_0,\ldots,a_n$ se
+definen entonces como las funciones de $\sigma\subset\mathbb{R}^N$ en $\mathbb{R}$ tales que $t_i(x) = t_i$.
 \end{Defi}
+
+En la siguiente demostración usaremos que una transformación lineal
+entre espacios de dimensión finita con la topología inducida por la
+norma usual es necesariamente continua. La base canónica de
+$\mathbb{R}^N$ se denota como $\{e_1,e_2,\ldots,e_N\}$.
+
 \begin{Prop}
 Las coordenadas baricéntricas son continuas.
 \end{Prop}
 \begin{Dem}
 
 Sea $x$ un punto en $\sigma$, entonces $x=\sum_{i=0}^{n}t_i(x)a_i$ con $\sum_{i=0}^{n}t_i(x)=1$ y 
-$t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue que 
+$t_i(x)\geq 0$, notemos que $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ de donde se sigue que:
 \begin{equation}
  x = a_0 + \sum_{i=1}^{n}t_i(x)(a_i-a_0)
 \end{equation}
-El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordenadas de $x-a_0$ en la base $\{a_1-a_0,\ldots,a_n-a_0\}$, si completamos a una base $\{a_1-a_0,\ldots,a_n-a_0,b_{n+1},\ldots,b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,\ldots,n$ y $T(b_i) = 0$ para todo $i = n+1,\ldots,N$, tenemos que $T(x-x_0) = (t_1(x),\ldots,t_n(x),0,\ldots,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
+El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ y para $i>0$ las $t_i(x)$  son las coordenadas de $x-a_0$ en la base $\{a_1-a_0,\ldots,a_n-a_0\}$. Si completamos a una base $\{a_1-a_0,\ldots,a_n-a_0,b_{n+1},\ldots,b_N\}$ para $\mathbb{R}^N$,  y definimos la función lineal $T\colon \mathbb{R^N}\rightarrow \mathbb{R^N}$ tal que $T(a_i-a_0) = e_i$ para todo $i=1,\ldots,n$ y $T(b_i) = 0$ para todo $i = n+1,\ldots,N$, tenemos que $T(x-x_0) = (t_1(x),\ldots,t_n(x),0,\ldots,0)$ y como $T$ es continua cada una de sus componentes también lo es, además $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ es suma de funciones continuas y por la tanto también es continua. 
 \end{Dem}
 %Veamos que las coordenadas baricéntricas $t_i(x)$ son continuas, para ello definamos la función $T$ de $\sigma$ en $\mathbb{R}^{N}$ como $T(x) = (t_0(x),\ldots,t_n(x),0,\ldots,0)$.
 %\begin{Prop}
@@ -144,15 +173,16 @@ El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$ 
 %\end{equation}
 %El punto $x-a_0$ pertenece al espacio generado por $\{a_1-a_0,\ldots,a_n-a_0\}$y para $i>0$ las $t_i(x)$  son las coordendas de $x-a_0$ en la base $a_1-a_0,\ldots,a_n-a_0$ por lo tanto son continuas y  como $t_0(x) = 1-\sum_{i=1}^{n}t_i(x)$ también es continua de donde se sigue la continuidad de T. 
 %\end{Dem}
-Otras definiciones importantes sobre simplejos se enuncian a continuación:
+Otras definiciones importantes sobre simplejos geométricos se enuncian a continuación:
 \begin{Defi}[Caras de un simplejo]
-Sea $\sigma$ el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,\ldots,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
+Si $\sigma$ es el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$
+es un simplejo generado por algún subconjunto no vacío de $a_0,a_1,\ldots,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
 \end{Defi}
 \begin{Defi}[Frontera e interior de un simplejo]
 Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de todas sus caras propias y se denota por $\bd\sigma$. El interior de $\sigma$ se define como  $\interior \sigma = \sigma-\bd\sigma$. 
 \end{Defi}
 \begin{Prop}
-Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
+Para un simplejo geométrico $\sigma$ generado por los puntos $a_0,\ldots,a_n$ en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
 \begin{enumerate}[(a)]
 %\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
 \item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
@@ -169,7 +199,7 @@ Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N
 \end{align*}
 Ahora consideremos las combinaciones convexas de $x$ y $y$. Dadas por 
 $\lambda x + (1-\lambda)y$, con $\lambda$ en el intervalo $[0,1]$. 
-Re-ordenando términos tenemos que
+Reordenando términos tenemos que
 $\lambda x + (1-\lambda)y = [\lambda t_0(x)+(1-\lambda)t_0(y)]a_0+\cdots + [\lambda t_n(x)+(1-\lambda)t_n(y)]a_n$. 
 
 Tenemos que $\lambda t_i(x)+(1-\lambda)t_i(y)$ es mayor que cero para toda $i = 0,\ldots ,n$ y además
@@ -284,14 +314,14 @@ Sea $\delta = \min\{\delta_0,\ldots,\delta_n\}$ y $s = \parallel f(v_0)\parallel
 Sean $L$ y $K$ complejos simpliciales geométricos y sea $f\colon K^{(0)} \rightarrow L^{(0)}$ una función. Supongamos que  para todo simplejo $\sigma$ de $K$, sus vértices $v_0,\ldots,v_n$ cumplen que los puntos $f(v_0),\ldots,f(v_n)$ son vértices de un simplejo de $L$. Decimos que la extensión de $f$ dada por el teorema \ref{tms} es el morfismo simplicial lineal inducido por $f$ y lo denotaremos por $\abs{f}$.
 \end{Defi}
 \begin{Teo}
-Suponga $f:K^{(0)}\rightarrow L^{(0)}$ una función biyectiva tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el morfismo simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo. Decimos que $\abs{f}$ es un homeomorfismo simplicial.
+Suponga $f:K^{(0)}\rightarrow L^{(0)}$ una función biyectiva tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el morfismo simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homeomorfismo. Decimos que $\abs{f}$ es un homeomorfismo simplicial.
 \end{Teo}
 
 \begin{Col}
 \item Existe un homeomorfismo $f$ de el $n$-simplejo $\sigma$ en el disco unitario $D^n$, tal que $\bd \sigma$ es mapeada a $S^{n-1}$, es decir $f(\bd \sigma) = S^{n-1}$.
 \end{Col}
 \begin{Dem}
-Como $\sigma$ está contenido en $\mathbb{R}^N$, para algún $N$, no necesariamente se cumple que $interior \sigma$ sea abierto en $\mathbb{R}^n$, sin embargo si consideramos el $n$-simplejo $\tau$ en $\mathbb{R}^n$ generado por los vectores canónicos en $R^n$ y el vector cero. Definimos la función $f\colon V(\Delta(\sigma)^n) \to V(\Delta(\tau)^n)$ como $f(a_0) = 0$ y $f(a_i) = e_i$ para $i$ mayor que cero. Entonces $f$ induce un homeomorfismo $\abs{f}$ entre $\sigma$ y $\tau$.
+Como $\sigma$ está contenido en $\mathbb{R}^N$, para algún $N$, no necesariamente se cumple que $\interior \sigma$ sea abierto en $\mathbb{R}^N$, sin embargo si consideramos el $n$-simplejo $\tau$ en $\mathbb{R}^n$ generado por los vectores canónicos en $R^n$ y el vector cero. Definimos la función $f\colon V(\Delta(\sigma)^n) \to V(\Delta(\tau)^n)$ como $f(a_0) = 0$ y $f(a_i) = e_i$ para $i$ mayor que cero. Entonces $f$ induce un homeomorfismo $\abs{f}$ entre $\sigma$ y $\tau$.
 Luego por los  incisos $(a)$ y  $(b)$ de la proposición , $\int \tau$ es un conjunto abierto, convexo y acotado en $\mathbb{R^{n}}$, por el teorema \ref{homeo_esfera} existe un homeomorfismo $g$ entre $\tau$ y $D^n$.
 Por el teorema \ref{homeo_esfera} basta probar que 
 \end{Dem}
