@@ -149,13 +149,14 @@ Otras definiciones importantes sobre simplejos se enuncian a continuación:
 Sea $\sigma$ el simplejo generado por $a_0,a_1,\ldots,a_n$ y $\tau$ un simplejo generado por algún subconjunto no vacío de $a_0,a_1,\ldots,a_n$, decimos de $\tau$ es una cara de $\sigma$. Si $\tau$ está contenido estrictamente en $\sigma$ decimos que es una cara propia. 
 \end{Defi}
 \begin{Defi}[Frontera e interior de un simplejo]
-Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de todas sus caras propias y se denota por $Bd\sigma$. El interior de $\sigma$ se define como int $\sigma = \sigma-Bd\sigma$. 
+Sea $\sigma$ un simplejo, la frontera de $\sigma$ se define como la unión de todas sus caras propias y se denota por $\bd\sigma$. El interior de $\sigma$ se define como  $\interior \sigma = \sigma-\bd\sigma$. 
 \end{Defi}
 \begin{Prop}
 Para un simplejo $\sigma$ generado por $a_0,\ldots,a_n$ puntos en $\mathbb{R}^{N}$ se cumplen las siguientes propiedades:
 \begin{enumerate}[(a)]
 %\item $\sigma$ es igual a la unión de todos los segmentos que unen a $a_0$ con los puntos del simplejo $S$ generado por $a_1,\ldots,a_n$.
 \item $\sigma$ es un conjunto convexo y compacto en $\mathbb{R^{N}}$, el cual es igual a la intersección de todos los conjuntos convexos en $\mathbb{R^{N}}$ que contienen a $a_0,\ldots,a_n$.
+\item Si $N = n$, entonces $\interior \sigma$ es abierto en $\mathbb{R}^N$ y $\bd \sigma$ es su frontera en  $\mathbb{R}^N$.
 \item Dado un simplejo $\sigma$ existe un único conjunto geométricamente independiente que lo genera.
 \end{enumerate}
 \end{Prop}
@@ -179,14 +180,14 @@ Tenemos que $\lambda t_i(x)+(1-\lambda)t_i(y)$ es mayor que cero para toda $i = 
 & = 1
 \end{align*}
 Por lo tanto $\lambda x + (1-\lambda)y$ pertenece a $\sigma$.
- 
 
+\item Sea $x$ un punto en $\interior \sigma$, entonces $x$ es de la forma $x = \sum_{i=0}^{n} t_i(x)a_i$, como $x$ no pertenece a ninguna cara propia de $\sigma$ se tiene que $t_i>0$ para toda $i$.
+Si extendemos las coordenadas baricéntricas a $R^n$, dando el valor de cero a los puntos en $\mathbb{R}^n-\sigma$, se sigue que las extensiones son continuas en $\mathbb{R}^n$.
+Como los puntos en $\interior \sigma$ cumplen que sus coordenadas baricéntricas son estrictamente mayores que cero, se cumple que $\interior \sigma$ es la intersección de las imágenes inversas de las coordenadas baricéntricas sobre el intervalo abierto $(0,1)$, es decir $\interior \sigma = t_i^{-1}((0,1))\cap\cdots\cap t_n^{-1}((0,1))$. Por lo tanto $interior \sigma$ es abierto en $\mathbb{R}^n$. 
 
+Por último como $\sigma$ es cerrado, se tiene que $\bd \sigma = \sigma -\interior \sigma = \bar{\sigma}-\interior \sigma$, de donde se sigue que $\bd \sigma$ es la frontera de $\sigma$ en el sentido usual.
 \end{enumerate}
 \end{Dem}
-\begin{Teo}
-\item Existe un homeomorfismo $f$ de el $n$-simplejo $\sigma$ en el disco unitario $D^n$, tal que $Bd\sigma$ es mapeada a $S^{n-1}$, es decir $f(Bd\sigma) = S^{n-1}$.
-\end{Teo}
 
 \subsection{Complejos en $\mathbb{R}^N$}
 \begin{Defi}[Complejo simplicial geométrico]
@@ -196,6 +197,9 @@ Un complejo simplicial geométrico $\textit{K}$ en $\mathbb{R}^N$  es una colecc
 \item La intersección de cualesquiera dos simplejos en $\textit{K}$ es una cara de cada uno de ellos.
 \end{enumerate} 
 \end{Defi}
+\begin{Ejem}
+Sea $\sigma$ un $n$-simplejo, la colección que consta de $\sigma$ y todas sus caras propias es un complejo simplicial y la denotamos por $\Delta^n$
+\end{Ejem} 
 \begin{Defi}
 Sean $\textit{K}$ y $\textit{L}$ complejos simpliciales geométricos, tales que $\textit{L}$ está contenido en $\textit{K}$, decimos entonces que $\textit{L}$ es un subcomplejo de $\textit{K}$. 
 \end{Defi}
@@ -282,6 +286,16 @@ Sean $L$ y $K$ complejos simpliciales geométricos y sea $f\colon K^{(0)} \right
 \begin{Teo}
 Suponga $f:K^{(0)}\rightarrow L^{(0)}$ una función biyectiva tal que los vértices $v_0,\ldots,v_n$ de $K$ generan un simplejo si y solo si $f(v_0),\ldots,f(v_n)$ generan un simplejo de $L$. Entonces el morfismo simplicial inducido $\abs{f}\colon \abs{K}\rightarrow\abs{L}$ es un homoemorfismo. Decimos que $\abs{f}$ es un homeomorfismo simplicial.
 \end{Teo}
+
+\begin{Col}
+\item Existe un homeomorfismo $f$ de el $n$-simplejo $\sigma$ en el disco unitario $D^n$, tal que $\bd \sigma$ es mapeada a $S^{n-1}$, es decir $f(\bd \sigma) = S^{n-1}$.
+\end{Col}
+\begin{Dem}
+Como $\sigma$ está contenido en $\mathbb{R}^N$, para algún $N$, no necesariamente se cumple que $interior \sigma$ sea abierto en $\mathbb{R}^n$, sin embargo si consideramos el $n$-simplejo $\tau$ en $\mathbb{R}^n$ generado por los vectores canónicos en $R^n$ y el vector cero. Definimos la función $f\colon V(\Delta(\sigma)^n) \to V(\Delta(\tau)^n)$ como $f(a_0) = 0$ y $f(a_i) = e_i$ para $i$ mayor que cero. Entonces $f$ induce un homeomorfismo $\abs{f}$ entre $\sigma$ y $\tau$.
+Luego por los  incisos $(a)$ y  $(b)$ de la proposición , $\int \tau$ es un conjunto abierto, convexo y acotado en $\mathbb{R^{n}}$, por el teorema \ref{homeo_esfera} existe un homeomorfismo $g$ entre $\tau$ y $D^n$.
+Por el teorema \ref{homeo_esfera} basta probar que 
+\end{Dem}
+
 \begin{Defi}
 Dos complejos simpliciales geométricos $L$ y $K$ son linealmente isomorfos si existe un homeomorfismo lineal de $K$ en $L$.
 \end{Defi}
