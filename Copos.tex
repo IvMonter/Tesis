@@ -83,19 +83,23 @@ Por lo tanto $f(z)=(p,b)$ y $f$ es suprayectiva.
 \end{Dem}
 
 \begin{Teo}
-Sean P y Q conjuntos finitos parcialmente ordenados, y sean $f$ y $g$ funciones simpliciales de P en Q tales que $f(x)\leq g(x), \forall x\in P$. Entonces $\abs{f}$ y $\abs{g}$ son homotópicas.
+Sean $P$ y $Q$ conjuntos finitos parcialmente ordenados, y sean $f$ y
+$g$ funciones simpliciales de $P$ en $Q$ tales que $f(x)\leq g(x)$
+para todo $x\in P$. Entonces $\abs{f}$ y $\abs{g}$ son homotópicas.
 \end{Teo}
 \begin{Dem}
 
 Definamos $H\colon P\times \{ 0,1\} \rightarrow Q$ como:
 
-$H(x,i)= \left\{ \begin{array}{lcc}
-              f(x)&   si &i=0,  \\
-             \\ g(x) &  si& i=1. 
+\begin{equation}
+H(x,i)= \left\{ \begin{array}{lcc}
+              f(x)&   \text{si} &i=0,  \\
+             \\ g(x) &  \text{si}& i=1. 
              \end{array}
-    \right. $
+    \right. \label{eq:1}
+  \end{equation}
 
-Luego $(x,i) \leq (y,j)$ si y solo si $x\leq y$ y $i\leq j$
+  Luego $(x,i) \leq (y,j)$ si y solo si $x\leq y$ y $i\leq j$
 
 Si $i=j$ como $f(x)\leq f(y)$ y $g(x)\leq g(y)$ se tiene que $H(x,i)\leq H(y,j)$
 
@@ -120,21 +124,28 @@ Como $\abs{P\times\{0,1\}}$ es homeomorfo a $\abs{P}\times[0,1]$ existe una func
 Definamos $\hat{\abs{H}}\colon\abs{P}\times[0,1]\to \abs{Q}$ como $\hat{\abs{H}} =  \abs{H} \circ h$, dado que $h$ y $\abs{H}$ son continuas $\hat{\abs{H}}$ también lo es.
 
 Finalmente 
-$\hat{\abs{H}}(x,0)= \abs{H}(h((x,0)))=\abs{H}((x,0)) = \abs{f}(x)$,
-$\hat{\abs{H}}(x,1)= \abs{H}(h((x,1)))=\abs{H}((x,1)) = \abs{g}(x)$.
+$\hat{\abs{H}}(x,0)= \abs{H}(h(x,0))=\abs{H}(x,0) = \abs{f}(x)$,
+$\hat{\abs{H}}(x,1)= \abs{H}(h(x,1))=\abs{H}(x,1) = \abs{g}(x)$.
 \end{Dem}
 
 \begin{Col}
-Sea P un conjunto parcialmente ordenado finito con un elemento máximo o un elemento mínimo, entonces $\abs{P}$ es contraíble.
+Sea $P$ un conjunto parcialmente ordenado finito con un elemento máximo o un elemento mínimo, entonces $\abs{P}$ es contraíble.
 \end{Col}
 
 \begin{Defi}
-Sea $P$ un conjunto parcialmente ordenado y $x$ en $P$. Definimos $P_{\leqslant x} = \{y\in P : y\leqslant x\}$ y $P_{\geqslant x} = \{y\in P : y\geqslant x\}$. Si $g\colon P \rightarrow Q$ es simplicial y $y$ un punto en $Q$, entonces decimos que el subcopo $g^{-1}(Q_{\leqslant y})$ es una fibra de $g$.
+Sea $P$ un conjunto parcialmente ordenado y $x$ en $P$. Definimos
+$P_{\leqslant x} = \{y\in P : y\leqslant x\}$ y $P_{\geqslant x} =
+\{y\in P : y\geqslant x\}$. Si $g\colon P \rightarrow Q$ preserva el
+orden y $y$ un punto en $Q$, entonces decimos que el subcopo $g^{-1}(Q_{\leqslant y})$ es una fibra de $g$.
 \end{Defi}
 
 \begin{Col}
 Sea $P$ un conjunto parcialmente ordenado finito. Entonces $P_{\leqslant x}$ y $P_{\geqslant x}$ son contraíbles.
 \end{Col}
+
+\section{Teorema de Quillen}
+\label{sec:teorema-de-quillen}
+
 
 \begin{Teo}
 Sean $P$ y $Q$ conjuntos parcialmente ordenados. Sea $f\colon P\rightarrow Q$ una función que preserva el orden, tal que todas sus fibras son contraíbles. Entonces $f$ induce una equivalencia homotópica entre $P$ y $Q$.
