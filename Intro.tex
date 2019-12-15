@@ -24,17 +24,17 @@ decimos que $H$ es una subgráfica inducida de $G$.
 \end{Defi}
 Notemos que una subgráfica inducida está determinada por su conjunto de vértices. Así que para referirnos a ella usaremos su conjunto de vértices
 
-\begin{Defi}
+\begin{Defi}[Orden de una gráfica]
 El orden de una gráfica $G$ es su número de vértices y lo denotamos por $o(G)$.
 \end{Defi}
-\begin{Defi}
+\begin{Defi}[Vecindad abierta]
 Dado un vértice $x$ de un  gráfica $G$, su vecindad abierta se define como $N_{G}(x) = \{y\in V(G): y\sim x\}$ 
 \end{Defi}
-\begin{Defi}
+\begin{Defi}[Vértice dominado]
 Dado un vértice $x$ de un  gráfica $G$, decimos que $x$ es un vértice dominado si existe $y$ en $N_{G}(x)$ tal que $N_{G}(x)$ está contenido en $N_{G}(y)\cup\{y\}$.
 \end{Defi}
 
-\begin{Defi}
+\begin{Defi}[Morfismo de gráficas]
 Sean $G$ y $H$ gráficas. Un morfismo de gráficas $f\colon G \rightarrow H$ es una función $f\colon: V(G)\rightarrow V(H)$ tal que si $x\simeq y$ implica $f(x)\simeq f(y)$.
 \end{Defi}
 
@@ -79,15 +79,24 @@ E(K(G))&=\{\{q_1,q_2\}: q_1\neq q_2 \text{ y } q_1\cap q_2 \neq \varnothing \}
 \end{align*}
 \end{Defi}
 
-\begin{Defi}
+\begin{Defi}[Sucesión de gráficas iteradas de clanes]
 Sea $G$ una gráfica. Definimos $K^{0}$ como $G$ y para $n>0$, definimos $K^n(G)$ como $K(K^{n-1})$.
 
 La sucesión de gráficas $G = K^{0}, K(G) = K^1(G), K^2(G),\ldots$ es la sucesión de gráficas de clanes iteradas. 
 \end{Defi}
 
-\begin{Defi}
+\begin{Defi}[Clan comportamiento]
 Si la gráfica $G$ es tal que el conjunto de ordenes de la sucesión de gráficas de clanes iteradas es no acotada decimos que $G$ es clan divergente.
 En caso contrario decimos que $G$ es clan convergente.
+\end{Defi}
+\begin{Defi}[Camino]
+
+\end{Defi}
+\begin{Defi}[Conexidad]
+Una gráfica $G$ es conexa si para cualesquiera dos de sus vértices $x$ y $y$, con $x\neq y$, existe un camino entre ellos.
+\end{Defi}
+\begin{Defi}[Árbol]
+Una gráfica $G$ es un árbol si es conexa y acíclica.
 \end{Defi}
 \section{Espacios topológicos}
 En está sección se exponen definiciones y teoremas del área de topología que serán de gran utilidad para evidenciar las propiedades de la realización geométrica de una gráfica que se preservan bajo el operador de clanes. 
